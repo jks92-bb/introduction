@@ -23,7 +23,7 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="" data-size="original">
 <img src="https://img.shields.io/badge/pycharm-000000?style=for-the-badge&logo=pycharm&logoColor=white" alt="" data-size="original">
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white" alt="" data-size="original">
-<img src=[https://ide.goorm.io/](https://blog.kakaocdn.net/dn/cQPjE1/btqSX6UKTn9/nHAN8hoWx6wE3rqfkt4IA0/img.png) alt="" data-size="original">
+<img src=[https://ide.goorm.io/](https://blog.kakaocdn.net/dn/cQPjE1/btqSX6UKTn9/nHAN8hoWx6wE3rqfkt4IA0/img.png) >
 
 </details>
 
