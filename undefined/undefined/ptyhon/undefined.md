@@ -20,9 +20,9 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 
 <summary>🛠활용 도구</summary>
 
-<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&#x26;logo=python&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/pycharm-000000?style=for-the-badge&#x26;logo=pycharm&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&#x26;logo=github&#x26;logoColor=white" alt="" data-size="original"> <img src="../../../.gitbook/assets/구름ide.png" alt="" data-size="line"> 
-<img src="https://img.shields.io/badge/kakaotalk-FFCD00?style=for-the-badge&#x26;logo=kakaotalk&#x26;logoColor=white" alt="" data-size="original"> 
-<img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&#x26;logo=flask&#x26;logoColor=white" alt="" data-size="original">
+<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&#x26;logo=python&#x26;logoColor=white" alt="" data-size="original"><img src="https://img.shields.io/badge/pycharm-000000?style=for-the-badge&#x26;logo=pycharm&#x26;logoColor=white" alt="" data-size="original"><img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&#x26;logo=flask&#x26;logoColor=white" alt="" data-size="original">
+
+<img src="../../../.gitbook/assets/구름ide.png" alt="" data-size="line"><img src="https://img.shields.io/badge/kakaotalk-FFCD00?style=for-the-badge&#x26;logo=kakaotalk&#x26;logoColor=white" alt="" data-size="original"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&#x26;logo=github&#x26;logoColor=white" alt="" data-size="original">
 
 </details>
 
