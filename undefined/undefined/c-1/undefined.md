@@ -137,6 +137,78 @@ public class KakaoAPI
 ```
 {% endcode %}
 
+대구광역시 맛집 데이터 API를 받아와서 DB에 기입하기 위한 코드입니다.
+{% code lineNumbers="true" fullWidth="false" %}
+```csharp
+private void button1_Click(object sender, EventArgs e)
+{
+    // 대구시의 구 목록
+    string[] matjips = new string[] { "중구", "수성구", "남구", "동구", "서구", "북구", "달서구", "달성군" };
+
+    // 각 구에 대해 데이터를 가져오는 반복문
+    for (int i = 0; i < matjips.Length; i++)
+    {
+        // WebClient를 사용하여 데이터를 다운로드
+        using (WebClient wc = new WebClient())
+        {
+            // 문자열 인코딩을 UTF-8로 설정
+            wc.Encoding = Encoding.UTF8;
+
+            try
+            {
+                // API에서 데이터를 가져오는 URL
+                string apiUrl = "https://www.daegufood.go.kr/kor/api/tasty.html?mode=json&addr=" + matjips[i];
+
+                // JSON 형식의 데이터를 문자열로 다운로드
+                string json = wc.DownloadString(apiUrl);
+
+                // JSON 데이터를 파싱
+                var jArray = JObject.Parse(json);
+                var jarr = jArray["data"];
+                var total = jArray["total"];
+
+                int count = 0;
+
+                // JSON 데이터를 Good 객체로 변환하여 List에 추가
+                while (count < int.Parse(total.ToString()))
+                {
+                    DBHelper.insertData(jarr[count]["cnt"].ToString(),
+                        jarr[count]["OPENDATA_ID"].ToString(),
+                        jarr[count]["GNG_CS"].ToString(),
+                        jarr[count]["FD_CS"].ToString(),
+                        jarr[count]["BZ_NM"].ToString(),
+                        jarr[count]["TLNO"].ToString(),
+                        jarr[count]["MBZ_HR"].ToString(),
+                        jarr[count]["PKPL"].ToString(),
+                        jarr[count]["HP"].ToString(),
+                        jarr[count]["BKN_YN"].ToString(),
+                        jarr[count]["INFN_FCL"].ToString(),
+                        jarr[count]["MNU"].ToString(),
+                        jarr[count]["SMPL_DESC"].ToString(),
+                        jarr[count]["SEAT_CNT"].ToString(),
+                        jarr[count]["SBW"].ToString(),
+                        jarr[count]["PSB_FRN"].ToString(),
+                        jarr[count]["BUS"].ToString(),
+                        jarr[count]["BRFT_YN"].ToString(),
+                        jarr[count]["DSSRT_YN"].ToString());
+                    count++;
+                }
+            }
+            catch (Exception ex)
+            {
+                // 예외 처리: 로깅이나 사용자에게 알림 등을 추가할 수 있음
+                Console.WriteLine("데이터 가져오기 또는 파싱 오류: " + ex.Message);
+            }
+        }
+    }
+}
+
+      
+
+
+```
+{% endcode %}
+
 </details>
 
 <details>
