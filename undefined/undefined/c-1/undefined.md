@@ -25,10 +25,12 @@ description: C#을 활용한 대구 맛집 정보 시스템입니다.
 </details>
 
 <details>
+
 <summary>🛰️이용API</summary>
-  
-1. 공공데이터포털 API [https://www.data.go.kr/data/15057236/openapi.do]
-2. KAKAO Maps API [https://apis.map.kakao.com/web/]
+
+1. [공공데이터포털 API](https://www.data.go.kr/data/15057236/openapi.do)&#x20;
+2. [KAKAO Maps API](https://apis.map.kakao.com/web/)
+
 </details>
 
 <details>
