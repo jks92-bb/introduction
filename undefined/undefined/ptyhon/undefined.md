@@ -20,10 +20,7 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 
 <summary>🛠활용 도구</summary>
 
-<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="" data-size="original">
-<img src="https://img.shields.io/badge/pycharm-000000?style=for-the-badge&logo=pycharm&logoColor=white" alt="" data-size="original">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white" alt="" data-size="original">
-<img src=[https://ide.goorm.io/](https://blog.kakaocdn.net/dn/cQPjE1/btqSX6UKTn9/nHAN8hoWx6wE3rqfkt4IA0/img.png) >
+<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&#x26;logo=python&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/pycharm-000000?style=for-the-badge&#x26;logo=pycharm&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&#x26;logo=github&#x26;logoColor=white" alt="" data-size="original"> <img src="../../../.gitbook/assets/구름ide.png" alt="" data-size="line">
 
 </details>
 
@@ -41,6 +38,7 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 <summary>📃중점 코드</summary>
 
 카카오 맵 API를 이용하기 위한 코드 입니다.
+
 {% code lineNumbers="true" fullWidth="false" %}
 ```csharp
 public class KakaoAPI
@@ -100,6 +98,7 @@ public class KakaoAPI
 {% endcode %}
 
 공공데이터 포털에서 받아와 데이터그리드뷰에 표시된 데이터를 클릭하여 kakaoAPI를 이용하여 지도를 표시해주는 코드입니다.
+
 {% code lineNumbers="true" fullWidth="false" %}
 ```csharp
 
@@ -141,6 +140,7 @@ public class KakaoAPI
 {% endcode %}
 
 대구광역시 맛집 데이터 API를 받아와서 DB에 기입하기 위한 코드입니다.
+
 {% code lineNumbers="true" fullWidth="false" %}
 ```csharp
 private void button1_Click(object sender, EventArgs e)

@@ -20,10 +20,7 @@ description: C#을 활용한 대구 맛집 정보 시스템입니다.
 
 <summary>🛠활용 도구</summary>
 
-<img src="https://img.shields.io/badge/C%20Sharp-239120?style=for-the-badge&logo=C%20Sharp&logoColor=white" alt="" data-size="original">
-<img src="https://img.shields.io/badge/visualstudio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white" alt="" data-size="original">
-<img src="https://img.shields.io/badge/microsoftsqlserver-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="" data-size="original">
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white" alt="" data-size="original">
+<img src="https://img.shields.io/badge/C%20Sharp-239120?style=for-the-badge&#x26;logo=C%20Sharp&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/visualstudio-5C2D91?style=for-the-badge&#x26;logo=visualstudio&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/microsoftsqlserver-CC2927?style=for-the-badge&#x26;logo=microsoftsqlserver&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&#x26;logo=github&#x26;logoColor=white" alt="" data-size="original">
 
 </details>
 
@@ -41,6 +38,7 @@ description: C#을 활용한 대구 맛집 정보 시스템입니다.
 <summary>📃중점 코드</summary>
 
 카카오 맵 API를 이용하기 위한 코드 입니다.
+
 {% code lineNumbers="true" fullWidth="false" %}
 ```csharp
 public class KakaoAPI
@@ -100,6 +98,7 @@ public class KakaoAPI
 {% endcode %}
 
 공공데이터 포털에서 받아와 데이터그리드뷰에 표시된 데이터를 클릭하여 kakaoAPI를 이용하여 지도를 표시해주는 코드입니다.
+
 {% code lineNumbers="true" fullWidth="false" %}
 ```csharp
 
@@ -141,6 +140,7 @@ public class KakaoAPI
 {% endcode %}
 
 대구광역시 맛집 데이터 API를 받아와서 DB에 기입하기 위한 코드입니다.
+
 {% code lineNumbers="true" fullWidth="false" %}
 ```csharp
 private void button1_Click(object sender, EventArgs e)
