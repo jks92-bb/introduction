@@ -37,58 +37,6 @@ description: C#을 활용한 대구 맛집 정보 시스템입니다.
 
 <summary>🛰중점 코드</summary>
 
-public class KakaoAPI
-{
-    //주소로 검색 
-    public static Locale SelectMap(string text)
-    {
-        // Kakao API 주소 검색을 위한 엔드포인트
-        string url = "https://dapi.kakao.com/v2/local/search/address.json";
-        
-        // 필요한 매개변수를 사용하여 쿼리 문자열을 구성
-        string query = $"{url}?analyze_type=similar&page=1&size=10&query={text}";
-        
-        // 인증을 위한 Kakao API 키
-        string restAPIKey = "799a3031dec6472f3a94b15adf4b9b70";   
-        
-        // Authorization 헤더를 구성
-        string Header = $"KakaoAK {restAPIKey}";
-        
-        // 웹 요청 생성
-        WebRequest request = WebRequest.Create(query);
-        request.Headers.Add("Authorization", Header);
-
-        // 응답 획득
-        WebResponse response = request.GetResponse();
-        Stream stream = response.GetResponseStream();
-        StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-        string json = reader.ReadToEnd();
-
-        // JSON 응답을 역직렬화하기 위해 JavaScriptSerializer 사용
-        JavaScriptSerializer js = new JavaScriptSerializer();
-        dynamic dob = js.Deserialize<dynamic>(json);
-        dynamic docs = dob["documents"][0];
-
-        // 응답에서 관련 정보 추출
-        string lname = docs["address_name"];
-        double x, y;
-
-        // road_address가 null인지 확인하고 좌표를 적절히 파싱
-        if (docs["road_address"] != null)
-        {
-            x = double.Parse(docs["road_address"]["x"]);
-            y = double.Parse(docs["road_address"]["y"]);
-        }
-        else
-        {
-            x = double.Parse(docs["x"]);
-            y = double.Parse(docs["y"]);
-        }
-
-        // 추출된 정보로 새로운 Locale 객체를 생성하고 반환
-        return new Locale(lname, y, x);
-    }
-}
 
 
 </details>
