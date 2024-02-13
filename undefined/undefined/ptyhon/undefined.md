@@ -10,7 +10,7 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 
 <details>
 
-<summary>개발목적</summary>
+<summary>개발 목적</summary>
 
 바쁜 현대인들을 위한 패션 코디 추천 서비스 개발
 
@@ -21,15 +21,6 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 <summary>🛠활용 도구</summary>
 
 <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&#x26;logo=python&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/pycharm-000000?style=for-the-badge&#x26;logo=pycharm&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&#x26;logo=github&#x26;logoColor=white" alt="" data-size="original"> <img src="../../../.gitbook/assets/구름ide.png" alt="" data-size="line">
-
-</details>
-
-<details>
-
-<summary>🛰️이용API</summary>
-
-1. [공공데이터포털 API](https://www.data.go.kr/data/15057236/openapi.do)
-2. [KAKAO Maps API](https://apis.map.kakao.com/web/)
 
 </details>
 
@@ -218,6 +209,6 @@ private void button1_Click(object sender, EventArgs e)
 
 <summary>📕프로젝트 git 주소</summary>
 
-[https://github.com/Hyno2/CSharpProject](https://github.com/Hyno2/CSharpProject)
+[https://github.com/jks92-bb/pyproject](https://github.com/jks92-bb/pyproject)
 
 </details>
