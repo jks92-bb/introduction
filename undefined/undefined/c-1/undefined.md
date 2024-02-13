@@ -37,6 +37,7 @@ description: C#을 활용한 대구 맛집 정보 시스템입니다.
 
 <summary>📃중점 코드</summary>
 
+카카오 맵 API를 이용하기 위한 코드 입니다.
 {% code lineNumbers="true" fullWidth="false" %}
 ```csharp
 public class KakaoAPI
@@ -91,6 +92,47 @@ public class KakaoAPI
         return new Locale(lname, y, x);
     }
 }
+
+```
+{% endcode %}
+
+공공데이터 포털에서 받아와 데이터그리드뷰에 표시된 데이터를 클릭하여 kakaoAPI를 이용하여 지도를 표시해주는 코드입니다.
+{% code lineNumbers="true" fullWidth="false" %}
+```csharp
+
+        private void dataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
+{
+    // DataGridView에서 선택한 행의 데이터를 GoodMatJip 객체로 변환
+    GoodMatJip m = (sender as DataGridView).CurrentRow.DataBoundItem as GoodMatJip;
+
+    // UI 컨트롤에 선택한 가게의 정보를 표시
+    상호명.Text = m.상호명;
+    주소.Text = m.주소;
+    영업시간.Text = m.영업시간;
+    메뉴.Text = m.메뉴;
+    매장설명.Text = m.매장설명;
+    매장전화번호.Text = m.전화번호;
+    카테고리.Text = m.카테고리;
+    예약가능여부.Text = m.예약가능여부;
+
+    try
+    {
+        // KakaoAPI를 사용하여 주소에 대한 지도 정보를 가져옴
+        Locale temp = KakaoAPI.SelectMap(m.주소);
+
+        // 지도상의 중심을 선택한 위치로 설정
+        object[] pos = new object[] { temp.Lat, temp.Lng };
+        HtmlDocument hdoc = Majip_webBrowser.Document;
+        hdoc.InvokeScript("setCenter", pos);
+    }
+    catch (Exception ex)
+    {
+        // 오류 발생 시 메시지 박스 표시
+        MessageBox.Show(ex.Message + "_" + ex.StackTrace);
+    }
+}
+
+
 
 ```
 {% endcode %}
