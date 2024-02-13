@@ -13,7 +13,7 @@
     * [가계부 시스템](undefined/undefined/c/household.md)
   * [JAVA](undefined/undefined/java/README.md)
     * [Page 2](undefined/undefined/java/page-2.md)
-  * [<img src="https://img.shields.io/badge/C%20Sharp-239120?style=flat-square&logo=C%20Sharp&logoColor=white"/></a> C#](undefined/undefined/c-1/README.md)
+  * [C#](undefined/undefined/c-1/README.md)
     * [대구 맛집 정보 시스템](undefined/undefined/c-1/undefined.md)
   * [Ptyhon](undefined/undefined/ptyhon/README.md)
     * [기상 예보 시스템](undefined/undefined/ptyhon/undefined.md)
