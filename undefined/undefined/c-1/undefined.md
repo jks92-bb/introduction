@@ -1,11 +1,3 @@
-<style>
-  .tool-badge {
-    margin-bottom: 10px; /* 원하는 간격으로 조절하세요 */
-  }
-</style>
-
-
-
 ---
 description: C#을 활용한 대구 맛집 정보 시스템입니다.
 ---
@@ -22,10 +14,10 @@ description: C#을 활용한 대구 맛집 정보 시스템입니다.
 
 <summary>🛠활용 도구</summary>
 
-![](https://img.shields.io/badge/C%20Sharp-239120?style=flat-square\&logo=C%20Sharp\&logoColor=white){: .tool-badge}
-![](https://img.shields.io/badge/visualstudio-5C2D91?style=flat-square\&logo=visualstudio\&logoColor=white){: .tool-badge}
-![](https://img.shields.io/badge/microsoftsqlserver-CC2927?style=flat-square\&logo=visualstudio\&logoColor=white){: .tool-badge}
-![](https://img.shields.io/badge/github-181717?style=flat-square\&logo=visualstudio\&logoColor=white){: .tool-badge}
+![](https://img.shields.io/badge/C%20Sharp-239120?style=flat-square\&logo=C%20Sharp\&logoColor=white) &nbsp;
+![](https://img.shields.io/badge/visualstudio-5C2D91?style=flat-square\&logo=visualstudio\&logoColor=white) &nbsp;
+![](https://img.shields.io/badge/microsoftsqlserver-CC2927?style=flat-square\&logo=visualstudio\&logoColor=white) &nbsp;
+![](https://img.shields.io/badge/github-181717?style=flat-square\&logo=visualstudio\&logoColor=white)
 
 
 </details>
