@@ -1,4 +1,4 @@
-# Ptyhon
+# Python
 
 ## 학습
 
