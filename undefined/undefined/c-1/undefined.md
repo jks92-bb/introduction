@@ -35,8 +35,9 @@ description: C#을 활용한 대구 맛집 정보 시스템입니다.
 
 <details>
 
-<summary>🛰중점 코드</summary>
+<summary>📃중점 코드</summary>
 
+{% code lineNumbers="true" fullWidth="false" %}
 ```csharp
 public class KakaoAPI
 {
@@ -90,7 +91,9 @@ public class KakaoAPI
         return new Locale(lname, y, x);
     }
 }
+
 ```
+{% endcode %}
 
 </details>
 
