@@ -20,9 +20,9 @@ description: C#을 활용한 대구 맛집 정보 시스템입니다.
 
 <summary>🛠활용 도구</summary>
 
-<img src="https://img.shields.io/badge/C%20Sharp-239120?style=flat-square&logo=C%20Sharp&logoColor=white" alt="" data-size="original">
-<img src="https://img.shields.io/badge/visualstudio-5C2D91?style=flat-square&logo=visualstudio&logoColor=white" alt="" data-size="original">
-<img src="https://img.shields.io/badge/microsoftsqlserver-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="" data-size="original">
+<img src="https://img.shields.io/badge/C%20Sharp-239120?style=for-the-badge&logo=C%20Sharp&logoColor=white" alt="" data-size="original">
+<img src="https://img.shields.io/badge/visualstudio-5C2D91?style=for-the-badge&logo=visualstudio&logoColor=white" alt="" data-size="original">
+<img src="https://img.shields.io/badge/microsoftsqlserver-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="" data-size="original">
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white" alt="" data-size="original">
 
 </details>
