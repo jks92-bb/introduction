@@ -2,10 +2,6 @@
 
 * [👋 환영합니다.](README.md)
 
-## About me
-
-* [💖 Values](about-me/values.md)
-
 ## 💻 학습게시판
 
 * [📚 학습 정보](undefined/undefined/README.md)
