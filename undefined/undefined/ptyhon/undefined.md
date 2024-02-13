@@ -4,7 +4,7 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 
 # 기상 예보 시스템
 
-* 🗓️프로젝트 기간\[23.11.09\~23.11.24]
+* 🗓️프로젝트 기간\[23.12.03\~23.12.15]
 
 ### 프로젝트 개요
 
@@ -12,7 +12,7 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 
 <summary>개발목적</summary>
 
-대구광역시에서 맛집으로 보증하는 데이터만 추출하여 사용자가 즐겨찾기한 맛집을 개인화하여 관리하기 위해서 개발하게 되었습니다.
+바쁜 현대인들을 위한 패션 코디 추천 서비스 개발
 
 </details>
 
@@ -20,7 +20,10 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 
 <summary>🛠활용 도구</summary>
 
-<img src="https://img.shields.io/badge/C%20Sharp-239120?style=flat-square&#x26;logo=C%20Sharp&#x26;logoColor=white" alt="" data-size="original"><img src="https://img.shields.io/badge/visualstudio-5C2D91?style=flat-square&#x26;logo=visualstudio&#x26;logoColor=white" alt="" data-size="original"><img src="https://img.shields.io/badge/microsoftsqlserver-CC2927?style=flat-square&#x26;logo=visualstudio&#x26;logoColor=white" alt="" data-size="original"><img src="https://img.shields.io/badge/github-181717?style=flat-square&#x26;logo=visualstudio&#x26;logoColor=white" alt="" data-size="original">
+<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="" data-size="original">
+<img src="https://img.shields.io/badge/pycharm-000000?style=flat-square&#x26;logo=pycharm&#x26;logoColor=white" alt="" data-size="original">
+
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white" alt="" data-size="original">
 
 </details>
 
