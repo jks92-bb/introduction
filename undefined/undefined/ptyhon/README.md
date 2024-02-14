@@ -2,10 +2,14 @@
 
 ## 학습
 
-1. ㄹㅇㄹㅇ
+{% content-ref url="undefined.md" %}
+[undefined.md](undefined.md)
+{% endcontent-ref %}
+
+***
 
 ## 프로젝트
 
-{% content-ref url="undefined.md" %}
-[undefined.md](undefined.md)
+{% content-ref url="undefined-1.md" %}
+[undefined-1.md](undefined-1.md)
 {% endcontent-ref %}
