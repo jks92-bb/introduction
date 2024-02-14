@@ -416,8 +416,9 @@ def create_answer_response(image_url):
 
 ```
 {% endcode %}
+<hr>
 
-사용자에게 표시될 발화값이 나올 코드입니다.
+사용자에게 표시될 응답값이 나올 코드입니다.
 
 {% code lineNumbers="true" fullWidth="false" %}
 ```python
