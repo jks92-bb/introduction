@@ -10,7 +10,7 @@ description: C#을 활용한 대구 맛집 정보 시스템입니다.
 
 <details>
 
-<summary>개발 목적</summary>
+<summary>📌개발 목적</summary>
 
 대구광역시에서 맛집으로 보증하는 데이터만 추출하여 사용자가 즐겨찾기한 맛집을 개인화하여 관리하기 위해서 개발하게 되었습니다.
 
@@ -216,7 +216,7 @@ private void button1_Click(object sender, EventArgs e)
 
 <details>
 
-<summary>📕프로젝트 git 주소</summary>
+<summary>🔎프로젝트 git 주소</summary>
 
 [https://github.com/Hyno2/CSharpProject](https://github.com/Hyno2/CSharpProject)
 
