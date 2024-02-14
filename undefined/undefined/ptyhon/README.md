@@ -6,6 +6,10 @@
 [undefined.md](undefined.md)
 {% endcontent-ref %}
 
+{% content-ref url="nexon-open-api.md" %}
+[nexon-open-api.md](nexon-open-api.md)
+{% endcontent-ref %}
+
 ***
 
 ## 프로젝트

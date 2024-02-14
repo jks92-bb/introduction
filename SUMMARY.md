@@ -13,6 +13,7 @@
     * [대구 맛집 정보 시스템](undefined/undefined/c-1/undefined.md)
   * [Python](undefined/undefined/ptyhon/README.md)
     * [공공데이터 활용하여 날씨 정보 받아오기](undefined/undefined/ptyhon/undefined.md)
+    * [NEXON Open API 이용하기](undefined/undefined/ptyhon/nexon-open-api.md)
     * [기상 예보 시스템](undefined/undefined/ptyhon/undefined-1.md)
   * [HTML/JSP](undefined/undefined/html-jsp/README.md)
     * [Page 3](undefined/undefined/html-jsp/page-3.md)
