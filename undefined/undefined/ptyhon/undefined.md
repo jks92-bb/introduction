@@ -10,7 +10,7 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 
 <details>
 
-<summary>개발 목적</summary>
+<summary>📌개발 목적</summary>
 
 바쁜 현대인들을 위한 패션 코디 추천 서비스 개발
 
@@ -29,7 +29,7 @@ description: 파이썬을 활용하여 기상예보시스템 카카오챗봇을 
 
 <summary>📃중점 코드</summary>
 
-네이버에서 날씨 정보를 크롤링하는 코드입니다. 
+네이버에서 날씨 정보를 크롤링하는 코드입니다.
 
 {% code lineNumbers="true" fullWidth="false" %}
 ```python
@@ -109,8 +109,7 @@ print('--------------------------------')
 ```
 {% endcode %}
 
- 처음의 코드로는 챗봇의 연동성이 부족하여 새로운 방식으로 변경하였습니다. [미세먼지,초미세먼지,자외선, 일몰] 같은 부가적인 요소는 크롤링이다 보니 없는 부분도 있어 올바르지 않는 검색이 수행이 되는 것을 알 수 있었습니다.
- 다음의 코드가 적용되어진 크롤링 코드입니다.
+처음의 코드로는 챗봇의 연동성이 부족하여 새로운 방식으로 변경하였습니다. \[미세먼지,초미세먼지,자외선, 일몰] 같은 부가적인 요소는 크롤링이다 보니 없는 부분도 있어 올바르지 않는 검색이 수행이 되는 것을 알 수 있었습니다. 다음의 코드가 적용되어진 크롤링 코드입니다.
 
 {% code lineNumbers="true" fullWidth="false" %}
 ```python
@@ -168,7 +167,8 @@ def get_weather_info(city):
 {% endcode %}
 
 본래 위치정보를 받아와서 날씨정보를 읽어들이는 기술을 구현하고자 하였으나 기술적 한계와 카카오 챗봇에서 사용자 GPS를 받아오려면 사업자의 등록이 필요함에 있어 사업자가 없으므로 키워드 검색으로 선회하여 구현하였습니다.
-<hr>
+
+***
 
 챗봇 앱의 내부 유틸을 구현한 코드입니다.
 
@@ -416,7 +416,8 @@ def create_answer_response(image_url):
 
 ```
 {% endcode %}
-<hr>
+
+***
 
 사용자에게 표시될 응답값이 나올 코드입니다.
 
@@ -489,8 +490,18 @@ if __name__ == "__main__":
 
 <details>
 
-<summary>📕프로젝트 git 주소</summary>
+<summary>🔎프로젝트 git 주소</summary>
 
 [https://github.com/jks92-bb/pyproject](https://github.com/jks92-bb/pyproject)
+
+</details>
+
+<details>
+
+<summary>📚참고 자료</summary>
+
+* [네이버 크롤링 참고문서](https://wikidocs.net/35949)
+* [카카오i 기술문서](https://docs.kakaoi.ai/)
+* [카카오 비즈니스 가이드](https://kakaobusiness.gitbook.io/main/tool/chatbot/skill\_guide/make\_skill)
 
 </details>
