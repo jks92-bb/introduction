@@ -14,8 +14,7 @@ description: 공공데이터 포털을 활용하여 날씨 정보를 받아오�
 
 </details>
 
-API에서 제공하는 요청변수(Request Parameter)에 맞게 원하는 값을 입력하여 사용합니다.
-아래에 그 예시를 적었습니다.
+API에서 제공하는 요청변수(Request Parameter)에 맞게 원하는 값을 입력하여 사용합니다. 아래에 그 예시를 적었습니다.
 
 ```python
 url = 'http://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList'
@@ -27,9 +26,11 @@ response = requests.get(url, params=params)
 xmldatas = elemTree.fromstring(response.text)
 
 ```
-<hr>
 
-매개변수를 통해서 받아온 정보를 표현하고 기입하기 위한 코드입니다.
+***
+
+요청변수를 통해서 받아온 정보를 표현하고 기입하기 위한 코드입니다.
+
 ```python
 # 찾고자 하는 엘리먼트의 경로를 정확하게 지정해봅시다.
 myresult = xmldatas.findall('.//item')
@@ -56,10 +57,13 @@ for item in myresult:
 
 
 ```
+
 <figure><img src="../../../.gitbook/assets/콘솔창.PNG" alt=""><figcaption><p>Python 콘솔창</p></figcaption></figure>
-<hr>
+
+***
 
 받아온 정보를 MySQL에 기입하기 위한 코드입니다.
+
 ```python
 #mysql 연결
 conn = pymysql.connect(
@@ -88,11 +92,13 @@ with conn.cursor() as cursor:
 conn.commit()
 conn.close()
 ```
+
 <figure><img src="../../../.gitbook/assets/대구날씨.PNG" alt=""><figcaption><p>MySQL 테이블 정보</p></figcaption></figure>
 
-<hr>
+***
 
 받은 정보를 그래프로 표현하는 코드입니다.
+
 ```python
 #차트 생성
 plt.figure(figsize=(10, 6))
