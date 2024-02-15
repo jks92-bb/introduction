@@ -16,6 +16,18 @@ API이용을 하기 위해서는 먼저 넥슨에 회원가입이 되어있어�
 
 넥슨의 여러 게임 중 메이플스토리의 API를 이용하기로 하였습니다.
 
+
+
+가이드에서 제공하는 파이썬 샘플코드를 활용하여 학습하였습니다.
+
 ```python
-// Some code
+headers = {
+  "x-nxopen-api-key": "발급 받은 API Key"
+}
+
+characterName = "캐릭터명"
+urlString = "https://open.api.nexon.com/heroes/v1/id?character_name=" + characterName
+response = requests.get(urlString, headers = headers)
+
+print(response.json())
 ```
