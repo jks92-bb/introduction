@@ -32,4 +32,12 @@ response = requests.get(urlString, headers = headers)
 print(response.json())
 ```
 
-캐릭터명이 존재함에도 오류가 발생하여 캐릭터 식별자(ocid) 값을 받아오지 못하는 경우가 있었는데, 예상하는 바로는 API에서 제공하는 정보가 2023년 12월 21일부터의 데이터이므로 23년 12월 21일부터 접속 이력이 없는 캐릭터에겐 식별자를 부여하고 있지 않은 것으로 보인다.
+캐릭터명이 존재함에도 오류가 발생하여 캐릭터 식별자(ocid) 값을 받아오지 못하는 경우가 있었는데, 예상하는 바로는 API에서 제공하는 정보가 2023년 12월 21일부터의 데이터이므로 23년 12월 21일부터 접속 이력이 없는 캐릭터에겐 식별자를 부여하고 있지 않은 것으로 보입니다.
+
+<figure><img src="../../../.gitbook/assets/2.PNG" alt=""><figcaption><p>직접 있는 캐릭터명으로 확인해보았습니다.</p></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/3.PNG" alt=""><figcaption><p>오류 발생</p></figcaption></figure>
+
+***
+
+확인을 하고자 직접 접속 후 테스트를 해보았습니다.
