@@ -121,4 +121,4 @@ plt.tight_layout()
 plt.show()
 ```
 
-<figure><img src="../../../.gitbook/assets/1.png" alt=""><figcaption><p>날씨정보로 받아온 결과값으로 만든 그래프</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/1 (1).png" alt=""><figcaption><p>날씨정보로 받아온 결과값으로 만든 그래프</p></figcaption></figure>

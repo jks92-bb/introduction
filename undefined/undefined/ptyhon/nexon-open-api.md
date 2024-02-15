@@ -16,7 +16,7 @@ API이용을 하기 위해서는 먼저 넥슨에 회원가입이 되어있어�
 
 넥슨의 여러 게임 중 메이플스토리의 API를 이용하기로 하였습니다.
 
-
+<figure><img src="../../../.gitbook/assets/1.png" alt="" width="142"><figcaption><p><a href="https://openapi.nexon.com/game/maplestory/?id=22">메이플스토리 API 가이드 바로가기</a></p></figcaption></figure>
 
 가이드에서 제공하는 파이썬 샘플코드를 활용하여 학습하였습니다.
 
