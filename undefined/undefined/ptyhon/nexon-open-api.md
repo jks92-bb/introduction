@@ -41,3 +41,70 @@ print(response.json())
 ***
 
 가설이 맞는지를 확인 하고자 직접 접속 후 테스트를 해보았습니다.
+
+
+
+
+
+```python
+if result:
+    # 여기에서 result를 이용하여 원하는 응답 생성
+    response = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {
+                    "basicCard": {
+                        "thumbnail": {
+                            "imageUrl": result['이미지']
+                        },
+                        "description": f"캐릭터명: {result['캐릭터명']}, 레벨: {result['레벨']}, 직업: {result['직업']}, 경험치 : {result['경험치']}%, 능력치 : {result['능력치']}"
+                    }
+                }
+            ]
+        }
+    }
+else:
+    response = {"error": "캐릭터 정보를 찾을 수 없습니다."}
+```
+
+위의 코드로 챗봇에서 발화를 해보았으나 난잡하게 정보가 보이는 것 같아보입니다.
+
+<figure><img src="../../../.gitbook/assets/image.png" alt="" width="217"><figcaption><p>카카오챗봇 응답 이미지</p></figcaption></figure>
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><img src="../../../.gitbook/assets/image (1).png" alt="" data-size="original"></td><td></td><td></td></tr><tr><td></td><td><img src="../../../.gitbook/assets/image (2).png" alt="" data-size="original"></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
+
+
+
+```python
+if result:
+            # 여기에서 result를 이용하여 원하는 응답 생성
+            response = {
+                "version": "2.0",
+                "template": {
+                   "outputs": [
+                {
+                    "basicCard": {
+                        "thumbnail": {
+                            "imageUrl": result['이미지']
+                        },
+                         "title": result['캐릭터명'],
+                        "description": f"레벨: {result['레벨']}\n직업: {result['직업']}\n경험치: {result['경험치']}%\n",
+                        "table": {
+                            "columns": [
+                                {"header": "능력치"},
+                                {"header": "값"}
+                            ],
+                            "data": [
+                                [stat.split(':')[0], stat.split(':')[1]] for stat in result['능력치']
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+        else:
+            response = {"error": "캐릭터 정보를 찾을 수 없습니다."}
+```
+
