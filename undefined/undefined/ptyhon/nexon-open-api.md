@@ -86,29 +86,25 @@ else:
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><img src="../../../.gitbook/assets/image (1) (1).png" alt="" data-size="original"></td><td></td><td></td></tr><tr><td></td><td><img src="../../../.gitbook/assets/image (2).png" alt="" data-size="original"></td><td></td></tr><tr><td></td><td><img src="../../../.gitbook/assets/image.png" alt="" data-size="original"></td><td></td></tr></tbody></table>
 
+아래의 코드를 사용하여 난잡하게 보인 결괏값을 알아보기 쉽게 변경하였습니다. 그리고 또한 테스트에서는 모든 응답 값이 넘어오는 것을 확인하였으나 폰에서 응답 결과가 모든 데이터를 받아오지 않는 것을 확인하였으며 확인 결과 데이터의 양의 초과하여 불필요한 데이터를 줄였습니다.
 ```python
-if result:
-            # 여기에서 result를 이용하여 원하는 응답 생성
+if my_req:  # 만약 발화값이 비어있지 않다면
+        # main 함수에서 반환된 결과를 사용
+        result = main(my_req)  # 발화값을 main 함수에 전달
+        if result:
+    # 여기에서 result를 이용하여 원하는 응답 생성
             response = {
                 "version": "2.0",
                 "template": {
-                   "outputs": [
-                {
-                    "basicCard": {
-                        "thumbnail": {
-                            "imageUrl": result['이미지']
+                    "outputs": [
+                        {
+                            "basicCard": {
+                                "thumbnail": {
+                                    "imageUrl": result['이미지']
                         },
-                         "title": result['캐릭터명'],
-                        "description": f"레벨: {result['레벨']}\n직업: {result['직업']}\n경험치: {result['경험치']}%\n",
-                        "table": {
-                            "columns": [
-                                {"header": "능력치"},
-                                {"header": "값"}
-                            ],
-                            "data": [
-                                [stat.split(':')[0], stat.split(':')[1]] for stat in result['능력치']
-                            ]
-                        }
+                        "title": result['캐릭터명'],
+                        "description": f"레벨: {result['레벨']}\n직업: {result['직업']}\n경험치: {result['경험치']}%\n"
+                        + "\n".join([f"{stat.split(':')[0]}: {stat.split(':')[1]}" for stat in result['능력치']])
                     }
                 }
             ]
