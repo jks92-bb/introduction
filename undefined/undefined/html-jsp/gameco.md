@@ -729,6 +729,7 @@ public class PostServiceInsert implements PostService {
 
 **PostCommandController.java**
 
+Post의 명령 컨트롤러 입니다.
 ```java
 package com.project.Controller;
 
