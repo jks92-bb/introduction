@@ -16,7 +16,7 @@
     * [NEXON Open API 이용하기](undefined/undefined/ptyhon/nexon-open-api.md)
     * [기상에 따른 코디 추천 시스템](undefined/undefined/ptyhon/forecast.md)
   * [HTML/JSP](undefined/undefined/html-jsp/README.md)
-    * [게임커뮤니티사이트](undefined/undefined/html-jsp/game.md)
+    * [게임커뮤니티사이트](undefined/undefined/html-jsp/gameco.md)
 
 ## Me
 
