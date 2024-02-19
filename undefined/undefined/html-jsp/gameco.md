@@ -27,20 +27,30 @@ description: 간단한 게임커뮤니티 사이트를 제작했습니다.
 <details>
 
 <summary>⚙️구성</summary>
-외부 라이브러리를 받아오기 위해 lib에 들어갈 
-![lib](https://github.com/jks92-bb/introduction/assets/49471248/4ee660a4-85d9-4b3c-ae44-81bec454ef6a)
 
-보통의 커뮤니티 사이트와는 다르게 로그인을 해야 사이트를 사용할 수 있습니다.
-로그인 화면입니다.
+외부 라이브러리를 받아오기 위해 lib에 json,jstl,mysql 라이브러리 파일을 사용합니다.
+
+&#x20;![](../../../.gitbook/assets/lib.PNG)
+
+각 라이브러리에 대한 설명입니다.
+
+**1.json-simple.jar:**
+
+`json-simple`은 JSON 데이터를 다루기 위한 Java 라이브러리입니다. JSON은 JavaScript Object Notation의 약어로, 데이터를 효과적으로 교환하는 데 사용되는 경량의 데이터 교환 형식입니다. `json-simple.jar`는 JSON 데이터를 생성하고 파싱하는 데 도움이 되는 라이브러리입니다.
+
+1. **jstl.jar (JavaServer Pages Standard Tag Library):**
+   * JSTL은 JavaServer Pages (JSP)에서 사용되는 표준 태그 라이브러리입니다. JSTL은 JSP 페이지에서 자주 사용되는 일반적인 작업들을 간편하게 처리하기 위한 태그들을 제공합니다. 예를 들어, 루프, 조건문, 데이터 포매팅 등을 처리하는 데 사용됩니다. `jstl.jar` 파일은 이러한 JSTL 태그들을 포함하고 있습니다.
+2.  **mysql-connector.jar:**
+
+    * `mysql-connector`는 MySQL 데이터베이스와 Java 어플리케이션 간의 연결을 지원하기 위한 JDBC(Java Database Connectivity) 드라이버입니다. Java 어플리케이션에서 MySQL 데이터베이스에 접근하고 데이터를 처리하는 데 사용됩니다. `mysql-connector.jar` 파일은 이 드라이버를 포함하고 있어서 Java 어플리케이션에서 MySQL과 상호 작용할 수 있게 해줍니다.
 
 
 
+보통의 커뮤니티 사이트와는 다르게 로그인을 해야 사이트를 사용할 수 있습니다. 로그인 화면입니다.
 
-<hr>
+***
+
 로그인 후 첫 화면입니다.
-
-
-
 
 </details>
 
@@ -61,6 +71,7 @@ description: 간단한 게임커뮤니티 사이트를 제작했습니다.
 ```
 
 fdsafds
+
 ```jsp
 
 
@@ -69,7 +80,6 @@ fdsafds
 ```
 
 fdsafds
-
 
 </details>
 
