@@ -28,11 +28,11 @@ description: 간단한 게임커뮤니티 사이트를 제작했습니다.
 
 <summary>📃중점 코드</summary>
 
-아래의 코드는 톰캣 server.xml 파일에서 Resource 요소를 지정해줘야 한다. 지정해주는 이유는 데이터베이스와 연동하기 위함이다.&#x20;
+아래의 코드는 톰캣 server.xml 파일에서 Resource 요소를 지정해줘야 한다. 지정해주는 이유는 데이터베이스와 연동하기 위함이다.  password는 제거하여 올렸습니다.
 
-```
+```xml
 <Context docBase="gamecoummunity" path="/webTeamPJ" reloadable="true" source="org.eclipse.jst.jee.server:gamecoummunity">
-			<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" name="jdbc/mysql" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/apidb" username="root"/>
+			<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" name="jdbc/mysql" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/apidb" username="root"/>
 			</Context>
 			</Host>
 		</Engine>
