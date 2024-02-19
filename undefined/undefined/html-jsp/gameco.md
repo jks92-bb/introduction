@@ -26,12 +26,32 @@ description: 간단한 게임커뮤니티 사이트를 제작했습니다.
 
 <details>
 
+<summary>⚙️구성</summary>
+외부 라이브러리를 받아오기 위해 lib에 들어갈 
+![lib](https://github.com/jks92-bb/introduction/assets/49471248/4ee660a4-85d9-4b3c-ae44-81bec454ef6a)
+
+보통의 커뮤니티 사이트와는 다르게 로그인을 해야 사이트를 사용할 수 있습니다.
+로그인 화면입니다.
+
+
+
+
+<hr>
+로그인 후 첫 화면입니다.
+
+
+
+
+</details>
+
+<details>
+
 <summary>📃중점 코드</summary>
 
-아래의 코드는 톰캣 server.xml 파일에서 Resource 요소를 지정해줘야 한다. 지정해주는 이유는 데이터베이스와 연동하기 위함이다.  password는 제거하여 올렸습니다.
+아래의 코드는 톰캣 server.xml 파일에서 Resource 요소를 지정해줘야 한다. 지정해주는 이유는 데이터베이스와 연동하기 위함이다. password는 제거하여 올렸습니다.
 
 ```xml
-<Context docBase="gamecoummunity" path="/webTeamPJ" reloadable="true" source="org.eclipse.jst.jee.server:gamecoummunity">
+<Context docBase="gamecoummunity" path="/gamecommunity"  reloadable="true" source="org.eclipse.jst.jee.server:gamecoummunity">
 			<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" name="jdbc/mysql" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/apidb" username="root"/>
 			</Context>
 			</Host>
@@ -39,6 +59,17 @@ description: 간단한 게임커뮤니티 사이트를 제작했습니다.
 	</Service>
 </Server>
 ```
+
+fdsafds
+```jsp
+
+
+
+
+```
+
+fdsafds
+
 
 </details>
 
