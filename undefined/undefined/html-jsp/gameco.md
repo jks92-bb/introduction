@@ -54,7 +54,7 @@ Controller, Command, PostCommand, DTO, DAO와 여러 html,jsp파일로 이루어
 
 <summary>📃중점 코드</summary>
 
-#### server.xml
+**server.xml**
 
 아래의 코드는 톰캣 server.xml 파일에서 Resource 요소를 지정해줘야 한다. 지정해주는 이유는 데이터베이스와 연동하기 위함이다. password는 제거하여 올렸습니다.
 
@@ -68,7 +68,7 @@ Controller, Command, PostCommand, DTO, DAO와 여러 html,jsp파일로 이루어
 </Server>
 ```
 
-#### ChatEndpoint.java
+**ChatEndpoint.java**
 
 아래의 코드는 WebSocket를 사용하여 간단한 채팅을 구현하였습니다. 각각 다른 클라이언트 간에 실시간 채팅을 가능케 하였습니다. 클라이언트에서 WebSocket을 통해 서버에 접속해 메시지를 주고받을 수 있습니다.
 
@@ -172,15 +172,15 @@ public class ChatEndpoint {
 
 1. @ServerEndpoint(value = "/chat", onfigurator=ChatEndpoint.HttpSessionConfigurator.class)
 
-WebSocket 서버 엔드포인트를 정의합니다. "/chat" 경로로 WebSocket 요청을 처리합니다. HttpSessionConfigurator를 사용하여 WebSocket 세션에 HttpSession을 연결합니다.&#x20;
+WebSocket 서버 엔드포인트를 정의합니다. "/chat" 경로로 WebSocket 요청을 처리합니다. HttpSessionConfigurator를 사용하여 WebSocket 세션에 HttpSession을 연결합니다.
 
 onOpen(Session session, EndpointConfig config)
 
 새로운 WebSocket 세션이 열릴 때 호출되는 메서드입니다. 연결된 HttpSession에서 사용자 아이디를 가져와서 WebSocket 세션의 사용자 속성에 저장합니다. 세션을 세션 목록에 추가하고, 사용자가 채팅에 참여했다는 메시지를 브로드캐스트합니다.
 
-2. &#x20;onClose(Session session)
+2. onClose(Session session)
 
-WebSocket 세션이 닫힐 때 호출되는 메서드입니다. 세션 목록에서 세션을 제거하고, 사용자가 채팅에서 나갔다는 메시지를 브로드캐스트합니다.&#x20;
+WebSocket 세션이 닫힐 때 호출되는 메서드입니다. 세션 목록에서 세션을 제거하고, 사용자가 채팅에서 나갔다는 메시지를 브로드캐스트합니다.
 
 3. onMessage(String message, Session session)
 
@@ -194,7 +194,8 @@ WebSocket 세션에 HttpSession을 연결하기 위한 구성 클래스입니다
 
 ***
 
-#### mainboard.jsp
+**mainboard.jsp**
+
 메인화면에서 사용한 채팅창 코드입니다.
 
 ```html
@@ -251,9 +252,10 @@ WebSocket 세션에 HttpSession을 연결하기 위한 구성 클래스입니다
 
 ```
 
-#### PostDAO.java
+**PostDAO.java**
 
-게시물 관련 DAO 코드입니다. [작성,목록보기, 상세보기,검색,수정,삭제]
+게시물 관련 DAO 코드입니다. \[작성,목록보기, 상세보기,검색,수정,삭제]
+
 ```java
 package com.project.DAO;
 
@@ -663,7 +665,8 @@ public class PostDAO {
 
 ```
 
-#### PostServiceinsert.java
+**PostServiceinsert.java**
+
 포스트 입력시 필요한 command 코드입니다.
 
 ```java
@@ -723,7 +726,9 @@ public class PostServiceInsert implements PostService {
 //long blob로 테이블컬럼 수정해 최대 4기가파일까지 업로드 가능
 
 ```
-#### PostCommandController.java
+
+**PostCommandController.java**
+
 ```java
 package com.project.Controller;
 
@@ -878,13 +883,6 @@ public class PostCommandController extends HttpServlet {
 }
 ```
 
-
-
-
-
-
-
-
 </details>
 
 <details>
@@ -892,5 +890,7 @@ public class PostCommandController extends HttpServlet {
 <summary>🔎프로젝트 git 주소</summary>
 
 [https://github.com/db-ung/web\_pj](https://github.com/db-ung/web\_pj)
+
+ㅇㄹㄷㄴㅁㅎㄹㅇ
 
 </details>
