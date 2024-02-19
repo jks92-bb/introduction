@@ -114,3 +114,11 @@ if my_req:  # 만약 발화값이 비어있지 않다면
 <figure><img src="../../../.gitbook/assets/image (3).png" alt="" width="336"><figcaption><p>수정된 응답 이미지</p></figcaption></figure>
 
 
+
+<details>
+
+<summary>🔎git 주소</summary>
+
+[메이플 정보 챗봇](https://github.com/jks92-bb/studyone/tree/main/Python/maplechatbot)
+
+</details>
