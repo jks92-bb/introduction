@@ -27,7 +27,7 @@ description: 간단한 게임커뮤니티 사이트를 제작했습니다.
 <details>
 
 <summary>📃중점 코드</summary>
-
+톰캣 server.xml 파일에서 Resource 요소를 지정해줘야 한다. 지정해주는 이유는 데이터베이스와 연동하기 위함이다.
 
 
 </details>
