@@ -70,7 +70,9 @@ Controller, Command, PostCommand, DTO, DAO와 여러 html,jsp파일로 이루어
 
 ### ChatEndpoint.java
 
-아래의 코드는 WebSocket를 사용하여 간단한 채팅
+아래의 코드는 WebSocket를 사용하여 간단한 채팅을 구현하였습니다. 
+각각 다른 클라이언트 간에 실시간 채팅을 가능케 하였습니다.
+클라이언트에서 WebSocket을 통해 서버에 접속해 메시지를 주고받을 수 있습니다.
 
 ```java
 package com.project.Controller;
@@ -165,6 +167,87 @@ public class ChatEndpoint {
         }
     }
 }
+
+```
+아래는 메서드에 대한 설명입니다.
+
+@ServerEndpoint(value = "/chat", configurator = ChatEndpoint.HttpSessionConfigurator.class)
+
+WebSocket 서버 엔드포인트를 정의합니다. "/chat" 경로로 WebSocket 요청을 처리합니다. HttpSessionConfigurator를 사용하여 WebSocket 세션에 HttpSession을 연결합니다.
+onOpen(Session session, EndpointConfig config)
+
+새로운 WebSocket 세션이 열릴 때 호출되는 메서드입니다.
+연결된 HttpSession에서 사용자 아이디를 가져와서 WebSocket 세션의 사용자 속성에 저장합니다.
+세션을 세션 목록에 추가하고, 사용자가 채팅에 참여했다는 메시지를 브로드캐스트합니다.
+onClose(Session session)
+
+WebSocket 세션이 닫힐 때 호출되는 메서드입니다.
+세션 목록에서 세션을 제거하고, 사용자가 채팅에서 나갔다는 메시지를 브로드캐스트합니다.
+onMessage(String message, Session session)
+
+클라이언트로부터 메시지가 도착했을 때 호출되는 메서드입니다.
+해당 세션에 연결된 사용자 아이디를 가져와서 메시지를 조합하고, 모든 세션에게 해당 메시지를 브로드캐스트합니다.
+broadcast(String message)
+
+세션 목록에 있는 모든 세션에게 메시지를 브로드캐스트하는 메서드입니다.
+HttpSessionConfigurator
+
+WebSocket 세션에 HttpSession을 연결하기 위한 구성 클래스입니다. modifyHandshake 메서드를 사용하여 HttpSession을 가져와 WebSocket 세션 구성에 추가합니다.
+
+***
+메인화면에서 사용한 채팅창 코드입니다.
+
+```jsp
+  대화창
+             <div id="chat"></div>
+    <input type="text" id="messageInput" onkeydown="handleKeyPress(event)" />
+    <button onclick="sendMessage()"> Send</button>
+    <script>
+        const ws = new WebSocket("ws://localhost:8182/webTeamPJ/chat");
+
+        ws.onopen = function(event) {
+            appendMessage("대화를 입력해주세요");
+        };
+
+        ws.onmessage = function(event) {
+            const message = event.data;
+            appendMessage(message);
+            //const userId = session.getAttribute("id");
+            //appendMessage("[" + userId + "] " + message);
+            
+        };
+
+        ws.onclose = function(event) {
+            appendMessage("WebSocket connection closed");
+        };
+
+        // 메시지 전송
+        function sendMessage() {
+            const messageInput = document.getElementById("messageInput");
+            const message = messageInput.value;
+
+            ws.send(message);
+            messageInput.value = "";
+        }
+
+        //메시지 출력
+        function appendMessage(message) {
+            const chatDiv = document.getElementById("chat");
+            const messageDiv = document.createElement("div");
+            messageDiv.textContent = message;
+            chatDiv.appendChild(messageDiv);
+            
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+        }
+        
+        // 엔터 키 핸들링
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+                event.preventDefault(); // 엔터 키의 기본 동작(새 줄 추가)을 막습니다.
+            }
+        }
+    </script>
 
 ```
 
