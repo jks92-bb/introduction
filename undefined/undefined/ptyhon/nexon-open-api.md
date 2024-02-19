@@ -52,6 +52,11 @@ print(response.json())
 
 <figure><img src="../../../.gitbook/assets/4.PNG" alt=""><figcaption><p>캐릭터의 간단한 정보</p></figcaption></figure>
 
+***
+
+이런 정보창을 확인하려면 사용자가 직접 코드를 실행해야 하기에 관련 지식이 없는 사용자가 확인 할 수 있도록 하기 위해서 카카오톡 챗봇도 추가하여 작업하였습니다.
+
+아래는 챗봇상의 간단한 
 ```python
 if result:
     # 여기에서 result를 이용하여 원하는 응답 생성
