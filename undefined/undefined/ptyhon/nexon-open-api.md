@@ -40,11 +40,17 @@ print(response.json())
 
 ***
 
-가설이 맞는지를 확인 하고자 직접 접속 후 테스트를 해보았습니다.
+가설이 맞는지를 확인하고자 직접 접속 후 테스트를 해보았습니다.
 
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-02-19 at 09.24.28.JPG" alt=""><figcaption><p>식별자 값 나타남</p></figcaption></figure>
 
+접속 후에 같은 캐릭터명을 넣고 확인 결과 식별자 값이 나타나는 것을 볼 수 있었습니다.
 
+***
 
+제공하는 API를 활용하여 간단한 정보를 확인한 결과입니다.
+
+<figure><img src="../../../.gitbook/assets/4.PNG" alt=""><figcaption><p>캐릭터의 간단한 정보</p></figcaption></figure>
 
 ```python
 if result:
