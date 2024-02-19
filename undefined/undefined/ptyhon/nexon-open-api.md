@@ -82,11 +82,12 @@ else:
 
 위의 코드로 챗봇에서 발화를 해보았으나 난잡하게 정보가 보이는 것 같아보입니다.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt="" width="217"><figcaption><p>카카오챗봇 응답 이미지</p></figcaption></figure>
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><img src="../../../.gitbook/assets/image (1) (1).png" alt="" data-size="original"></td><td></td><td></td></tr><tr><td></td><td><img src="../../../.gitbook/assets/image (2).png" alt="" data-size="original"></td><td></td></tr><tr><td></td><td><img src="../../../.gitbook/assets/image.png" alt="" data-size="original"></td><td></td></tr></tbody></table>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt="" width="325"><figcaption><p>카카오챗봇 응답 이미지</p></figcaption></figure>
 
 아래의 코드를 사용하여 난잡하게 보인 결괏값을 알아보기 쉽게 변경하였습니다. 그리고 또한 테스트에서는 모든 응답 값이 넘어오는 것을 확인하였으나 폰에서 응답 결과가 모든 데이터를 받아오지 않는 것을 확인하였으며 확인 결과 데이터의 양의 초과하여 불필요한 데이터를 줄였습니다.
+
+
+
 ```python
 if my_req:  # 만약 발화값이 비어있지 않다면
         # main 함수에서 반환된 결과를 사용
@@ -113,3 +114,5 @@ if my_req:  # 만약 발화값이 비어있지 않다면
         else:
             response = {"error": "캐릭터 정보를 찾을 수 없습니다."}
 ```
+
+<figure><img src="../../../.gitbook/assets/image (3).png" alt="" width="336"><figcaption><p>수정된 응답 이미지</p></figcaption></figure>
