@@ -36,7 +36,7 @@ JSON, JSTL.MYSQL을 사용하기 위해 외부 라이브러리를 받아옵니�
 
 **1.json-simple.jar:** `json-simple`은 JSON 데이터를 다루기 위한 Java 라이브러리입니다. JSON은 JavaScript Object Notation의 약어로, 데이터를 효과적으로 교환하는 데 사용되는 경량의 데이터 교환 형식입니다. `json-simple.jar`는 JSON 데이터를 생성하고 파싱하는 데 도움이 되는 라이브러리입니다.
 
-&#x20;**2.jstl.jar (JavaServer Pages Standard Tag Library):** JSTL은 JavaServer Pages (JSP)에서 사용되는 표준 태그 라이브러리입니다. JSTL은 JSP 페이지에서 자주 사용되는 일반적인 작업들을 간편하게 처리하기 위한 태그들을 제공합니다. 예를 들어, 루프, 조건문, 데이터 포매팅 등을 처리하는 데 사용됩니다. `jstl.jar` 파일은 이러한 JSTL 태그들을 포함하고 있습니다.&#x20;
+**2.jstl.jar (JavaServer Pages Standard Tag Library):** JSTL은 JavaServer Pages (JSP)에서 사용되는 표준 태그 라이브러리입니다. JSTL은 JSP 페이지에서 자주 사용되는 일반적인 작업들을 간편하게 처리하기 위한 태그들을 제공합니다. 예를 들어, 루프, 조건문, 데이터 포매팅 등을 처리하는 데 사용됩니다. `jstl.jar` 파일은 이러한 JSTL 태그들을 포함하고 있습니다.
 
 **3.mysql-connector.jar:** `mysql-connector`는 MySQL 데이터베이스와 Java 어플리케이션 간의 연결을 지원하기 위한 JDBC(Java Database Connectivity) 드라이버입니다. Java 어플리케이션에서 MySQL 데이터베이스에 접근하고 데이터를 처리하는 데 사용됩니다. `mysql-connector.jar` 파일은 이 드라이버를 포함하고 있어서 Java 어플리케이션에서 MySQL과 상호 작용할 수 있게 해줍니다.
 
@@ -54,7 +54,7 @@ Controller, Command, PostCommand, DTO, DAO와 여러 html,jsp파일로 이루어
 
 <summary>📃중점 코드</summary>
 
-### server.xml
+#### server.xml
 
 아래의 코드는 톰캣 server.xml 파일에서 Resource 요소를 지정해줘야 한다. 지정해주는 이유는 데이터베이스와 연동하기 위함이다. password는 제거하여 올렸습니다.
 
@@ -68,11 +68,9 @@ Controller, Command, PostCommand, DTO, DAO와 여러 html,jsp파일로 이루어
 </Server>
 ```
 
-### ChatEndpoint.java
+#### ChatEndpoint.java
 
-아래의 코드는 WebSocket를 사용하여 간단한 채팅을 구현하였습니다. 
-각각 다른 클라이언트 간에 실시간 채팅을 가능케 하였습니다.
-클라이언트에서 WebSocket을 통해 서버에 접속해 메시지를 주고받을 수 있습니다.
+아래의 코드는 WebSocket를 사용하여 간단한 채팅을 구현하였습니다. 각각 다른 클라이언트 간에 실시간 채팅을 가능케 하였습니다. 클라이언트에서 WebSocket을 통해 서버에 접속해 메시지를 주고받을 수 있습니다.
 
 ```java
 package com.project.Controller;
@@ -169,35 +167,36 @@ public class ChatEndpoint {
 }
 
 ```
+
 아래는 메서드에 대한 설명입니다.
 
-@ServerEndpoint(value = "/chat", configurator = ChatEndpoint.HttpSessionConfigurator.class)
+1. @ServerEndpoint(value = "/chat", onfigurator=ChatEndpoint.HttpSessionConfigurator.class)
 
-WebSocket 서버 엔드포인트를 정의합니다. "/chat" 경로로 WebSocket 요청을 처리합니다. HttpSessionConfigurator를 사용하여 WebSocket 세션에 HttpSession을 연결합니다.
+WebSocket 서버 엔드포인트를 정의합니다. "/chat" 경로로 WebSocket 요청을 처리합니다. HttpSessionConfigurator를 사용하여 WebSocket 세션에 HttpSession을 연결합니다.&#x20;
+
 onOpen(Session session, EndpointConfig config)
 
-새로운 WebSocket 세션이 열릴 때 호출되는 메서드입니다.
-연결된 HttpSession에서 사용자 아이디를 가져와서 WebSocket 세션의 사용자 속성에 저장합니다.
-세션을 세션 목록에 추가하고, 사용자가 채팅에 참여했다는 메시지를 브로드캐스트합니다.
-onClose(Session session)
+새로운 WebSocket 세션이 열릴 때 호출되는 메서드입니다. 연결된 HttpSession에서 사용자 아이디를 가져와서 WebSocket 세션의 사용자 속성에 저장합니다. 세션을 세션 목록에 추가하고, 사용자가 채팅에 참여했다는 메시지를 브로드캐스트합니다.
 
-WebSocket 세션이 닫힐 때 호출되는 메서드입니다.
-세션 목록에서 세션을 제거하고, 사용자가 채팅에서 나갔다는 메시지를 브로드캐스트합니다.
-onMessage(String message, Session session)
+2. &#x20;onClose(Session session)
 
-클라이언트로부터 메시지가 도착했을 때 호출되는 메서드입니다.
-해당 세션에 연결된 사용자 아이디를 가져와서 메시지를 조합하고, 모든 세션에게 해당 메시지를 브로드캐스트합니다.
-broadcast(String message)
+WebSocket 세션이 닫힐 때 호출되는 메서드입니다. 세션 목록에서 세션을 제거하고, 사용자가 채팅에서 나갔다는 메시지를 브로드캐스트합니다.&#x20;
 
-세션 목록에 있는 모든 세션에게 메시지를 브로드캐스트하는 메서드입니다.
-HttpSessionConfigurator
+3. onMessage(String message, Session session)
+
+클라이언트로부터 메시지가 도착했을 때 호출되는 메서드입니다. 해당 세션에 연결된 사용자 아이디를 가져와서 메시지를 조합하고, 모든 세션에게 해당 메시지를 브로드캐스트합니다.
+
+4. broadcast(String message)
+
+세션 목록에 있는 모든 세션에게 메시지를 브로드캐스트하는 메서드입니다. HttpSessionConfigurator
 
 WebSocket 세션에 HttpSession을 연결하기 위한 구성 클래스입니다. modifyHandshake 메서드를 사용하여 HttpSession을 가져와 WebSocket 세션 구성에 추가합니다.
 
 ***
+
 메인화면에서 사용한 채팅창 코드입니다.
 
-```jsp
+```html
   대화창
              <div id="chat"></div>
     <input type="text" id="messageInput" onkeydown="handleKeyPress(event)" />
@@ -250,8 +249,6 @@ WebSocket 세션에 HttpSession을 연결하기 위한 구성 클래스입니다
     </script>
 
 ```
-
-
 
 </details>
 
