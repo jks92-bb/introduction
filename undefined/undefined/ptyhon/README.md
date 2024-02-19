@@ -2,8 +2,8 @@
 
 ## 학습
 
-{% content-ref url="undefined.md" %}
-[undefined.md](undefined.md)
+{% content-ref url="forecast1.md" %}
+[forecast1.md](forecast1.md)
 {% endcontent-ref %}
 
 {% content-ref url="nexon-open-api.md" %}
@@ -14,6 +14,6 @@
 
 ## 프로젝트
 
-{% content-ref url="undefined-1.md" %}
-[undefined-1.md](undefined-1.md)
+{% content-ref url="forecast.md" %}
+[forecast.md](forecast.md)
 {% endcontent-ref %}

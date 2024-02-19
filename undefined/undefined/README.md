@@ -34,10 +34,10 @@ description: 학습 정보
 
 <summary><a href="ptyhon/">Python</a></summary>
 
-[공공데이터 활용하여 날씨 정보 받아오기](ptyhon/undefined.md)
+[공공데이터 활용하여 날씨 정보 받아오기](ptyhon/forecast1.md)
 
 [NEXON OPEN API 이용하기](ptyhon/nexon-open-api.md)
 
-[기상에 따른 코디 추천 시스템](ptyhon/undefined-1.md)
+[기상에 따른 코디 추천 시스템](ptyhon/forecast.md)
 
 </details>
