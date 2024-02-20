@@ -20,7 +20,7 @@ description: C언어를 이용해서 만든 가계부 시스템입니다.
 
 <summary>🛠활용 도구</summary>
 
-<img src="https://img.shields.io/badge/c-A8B9CC?style=for-the-badge&#x26;logo=c&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/visualstudio-5C2D91?style=for-the-badge&#x26;logo=visualstudio&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&#x26;logo=github&#x26;logoColor=white" alt="" data-size="original">
+<img src="https://img.shields.io/badge/c-A8B9CC?style=for-the-badge&#x26;logo=c&#x26;logoColor=white" alt="" data-size="original"><img src="https://img.shields.io/badge/visualstudio-5C2D91?style=for-the-badge&#x26;logo=visualstudio&#x26;logoColor=white" alt="" data-size="original"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&#x26;logo=github&#x26;logoColor=white" alt="" data-size="original">
 
 </details>
 
@@ -29,7 +29,9 @@ description: C언어를 이용해서 만든 가계부 시스템입니다.
 <summary>📃중점 코드</summary>
 
 일별조회, 월별조회, 전체내역조회, 데이터 삭제 코드입니다.
-### func.c
+
+#### func.c
+
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
@@ -340,10 +342,13 @@ void delete_all(char file1[],char file2[]) {
 
 
 ```
+
 ***
 
 가계부 메인 뼈대 코드입니다.
-### main.c
+
+#### main.c
+
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
@@ -615,20 +620,7 @@ int main() {
 
 ```
 
-
-
-
-
-
-
-
-
-
 ***
-
-
-
-
 
 </details>
 
@@ -644,8 +636,7 @@ int main() {
 
 <summary>📚참고 자료</summary>
 
-* [네이버 크롤링 참고문서](https://wikidocs.net/35949)
-* [카카오i 기술문서](https://docs.kakaoi.ai/)
-* [카카오 비즈니스 가이드](https://kakaobusiness.gitbook.io/main/tool/chatbot/skill\_guide/make\_skill)
+* [C언어 구조체](https://yeolco.tistory.com/113)
+* [파일 입출력](https://pgh268400.tistory.com/372)
 
 </details>
