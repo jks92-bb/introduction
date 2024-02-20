@@ -6,11 +6,15 @@ description: HTML/JSP 학습 및 프로젝트
 
 ## 학습
 
+{% content-ref url="search.md" %}
+[search.md](search.md)
+{% endcontent-ref %}
+
 {% content-ref url="html.md" %}
 [html.md](html.md)
 {% endcontent-ref %}
 
-##
+***
 
 ## 프로젝트
 
