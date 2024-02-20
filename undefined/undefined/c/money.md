@@ -12,7 +12,7 @@ description: C언어를 이용해서 만든 가계부 시스템입니다.
 
 <summary>📌개발 목적</summary>
 
-가계부르ㄹ 통ㅎㅏㅇㅕ&#x20;
+가계부를 통하여 수입과 지출을기록하여 무분별한 소비를 방지하여 재정 기획에 기여할 수 있게하기 위하여 만들어 보았습니다.
 
 </details>
 
@@ -20,8 +20,7 @@ description: C언어를 이용해서 만든 가계부 시스템입니다.
 
 <summary>🛠활용 도구</summary>
 
-<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&#x26;logo=python&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/pycharm-000000?style=for-the-badge&#x26;logo=pycharm&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&#x26;logo=flask&#x26;logoColor=white" alt="" data-size="original">\
-<img src="../../../.gitbook/assets/구름ide.png" alt="" data-size="line"> <img src="https://img.shields.io/badge/kakaotalk-FFCD00?style=for-the-badge&#x26;logo=kakaotalk&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&#x26;logo=github&#x26;logoColor=white" alt="" data-size="original">
+<img src="https://img.shields.io/badge/c-A8B9CC?style=for-the-badge&#x26;logo=c&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/visualstudio-5C2D91?style=for-the-badge&#x26;logo=visualstudio&#x26;logoColor=white" alt="" data-size="original"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&#x26;logo=github&#x26;logoColor=white" alt="" data-size="original">
 
 </details>
 
@@ -29,462 +28,332 @@ description: C언어를 이용해서 만든 가계부 시스템입니다.
 
 <summary>📃중점 코드</summary>
 
-네이버에서 날씨 정보를 크롤링하는 코드입니다.
+일별조회, 월별조회, 전체내역조회, 데이터 삭제 코드입니다.
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>	// exit()
+#include <time.h>	// time()
+#include <string.h>	// strcpy()
+#include <conio.h>
+#include <windows.h>// Sleep()
+#include "menu.h"
+#include "ui.h"
+#include "file.h"
+#include "func.h"
 
-{% code lineNumbers="true" fullWidth="false" %}
-```python
+void check_input_msg(income in) {
 
-import requests
-from bs4 import BeautifulSoup
-import urllib
-import ssl
-import random
+	printf("┌─ 확인─────────────────────────────┐\n");
+	printf("│  입력하신 금액은 %d원 입니다. ☜\n", in.money);
+	printf("│\t\t(1.예  2.아니오)    │\n");
+	printf("└───────────────────────────────────┘\n");
+	printf(" ▶ 선택: ");
+}
 
+void check_input_msg2(out ou) {
 
-#날씨 정보 입력받기
-city = input("지역을 치시오. :")
+	printf("┌─ 확인─────────────────────────────┐\n");
+	printf("│  입력하신 금액은 %d원 입니다. ☜\n", ou.money);
+	printf("│\t\t(1.예  2.아니오)    │\n");
+	printf("└───────────────────────────────────┘\n");
+	printf(" ▶ 선택: ");
+	
+}
 
-# 입력받은 지역에 대한 날씨 정보 검색
-search_url = f'https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query={urllib.parse.quote(city + "날씨")}'
-context = ssl._create_unverified_context()
-webpage = urllib.request.urlopen(search_url, context=context)
-soup = BeautifulSoup(webpage, 'html.parser')
+char spend_catagory(out ou) { // 오류 스트링카피가 리턴이안됌
+	
+}
 
-#날씨 정보 추출
-temps = soup.find('div','temperature_text')
-c_temp = soup.find('strong',{'class':''}).text
-summary = soup.find('p','summary')
-misegroup = soup.find('div',{'class':'report_card_wrap'})
-mise2 = misegroup.findAll('li')
-#pprint(mise2)
-#print(len(mise2))
+void pay_method(out ou) { // 오류
+	
+}
 
-# 온도 정보에서 숫자와 소수점만 추출하여 temperature 변수에 저장
-temperature = ''.join(filter(lambda x: x.isdigit() or x == '.', c_temp))
-#print(temperature)
+void day_check(int submenu2,char file1[],char file2[]) {
+	// 일별 조회  여기서 월 먼저 입력받고 입력받은 달의 일수만 표시하게 해야 할듯 
+	if (submenu2 == 1) {
+		int count = 1;
+		int cnt = 1;
+		int totalincome = 0;
+		int totalout = 0;
+		int card = 0;
+		int cash = 0;
+		income in = { 0 };
+		out ou = { 0 };
 
-# 추출한 온도 문자열을 실수형으로 변환
-temperatures = float(temperature)
-#날씨 정보 변수 초기화
-weather =''
+		// 230918 월 입력받기위한 변수 선언
+		int month = 0;
 
-# 계절 설정
-if( 7 < temperatures <20):
-    # 랜덤으로 '가을' 또는 '봄' 선택
-    weather = random.choice(['가을', '봄'])
-    print(weather)
-elif (temperatures <= 7):
-    weather = '겨울'
-    print(weather)
-elif (temperatures >= 20):
-    weather = '여름'
-    print(weather)
+		printf(" ▶ 월을 입력 해주세요 : ");
+		scanf("%d", &month);
 
-#결과 출력
-print(f'{city} 날씨 정보')
-if temps:
-    print(f'온도: {temps.text.strip()}')
+		rewind(stdin);
+		// 230918 month변수는 1~12까지만 받게끔 완료. 아닐시 재입력
+		while (month < 1 || month>12) {
+			printf(" 잘못된 날짜 입력!\n");
+			printf(" 다시 입력해 주세요.\n");
+			printf(" ▶ 월을 다시 입력해주세요 : ");
+			scanf("%d", &month);
+			rewind(stdin);
+		}
+		//일 입력받기위한 변수 선언
+		int day = 0;
 
-else:
-    print('온도 정보를 찾을 수 없습니다.')
-if summary:
-    print(f'날씨 상태: {summary.text.strip()}')
-else:
-    print('날씨 상태 정보를 찾을 수 없습니다.')
-#미세먼지, 초미세먼지, 자외선, 일몰 긁어오기.
-print('--------------------------------')
-for item in mise2:
-    #print("!")
-    title = item.find('strong',{'class':'title'}).text
-    contents = item.find('span',{'class':'txt'}).text
-    print(title+":"+contents)
-    #print("!")
+		printf(" ▶ 궁금한 날을 입력해주세요 : ");
+		scanf("%d", &day);
+		rewind(stdin);
+		printf(" 내역 불러오는중");
+		Sleep(400); printf(".");
+		Sleep(400); printf(".");
+		Sleep(400); printf(".\n");
+		Sleep(400);
 
-print('--------------------------------')
-# if misegroup:
-#     print(f'{misegroup.text.strip()}')
+		while (day < 1 || day>31) {
+			printf(" 잘못된 날짜 입력!\n");
+			printf(" 다시 입력해 주세요.\n");
+			printf(" ▶ 궁금한 날을 다시 입력해주세요 : ");
+			scanf("%d", &day);
+			rewind(stdin);
+		}
+		FILE* fp1 = fopen(file1, "rb");
+		FILE* fp2 = fopen(file2, "rb");
+
+		while (fread(&in, sizeof(income), 1, fp1) > 0) {
+			// 만약 입력받은날짜와 수입 구조체 변수 month 변수 day 값이 같다면
+			if (month == in.month && day == in.day) {
+				totalincome += in.money;
+				printf("───────────────────────\n");
+				printf(" 수익내역 %d 번째\n", count++);
+				printf(" 날짜 : %d월 %d일\n", in.month, in.day);
+				printf(" 금액 : %d\n", in.money);
+				printf(" 메모 : %s\n", in.memo);
+			}
+		}
+		while (fread(&ou, sizeof(out), 1, fp2) > 0) {
+			// 만약 입력 받은 날짜와 지출 구조체 변수 month 변수 month값과 같고 day 값이 같다면
+			if (month == ou.month && day == ou.day) {
+				totalout += ou.money;
+				// 230915 지불방식이 카드인 경우 card변수에 ou.money 값 누적 합산 by jung 
+				if (strcmp(ou.pay, "카드") == 0) {
+					card += ou.money;
+				}
+				// 230915 지불방식이 현금인 경우 cash변수에 ou.money 값 누적 합산 by jung
+				if (strcmp(ou.pay, "현금") == 0) {
+					cash += ou.money;
+				}
+				printf("───────────────────────\n");
+				printf(" 지출내역 %d 번째\n", cnt++);
+				printf(" 날짜 : %d월 %d일\n", ou.month, ou.day);
+				printf(" 금액 : %d원\n", ou.money);
+				printf(" 타입 : %s\n", ou.type);
+				printf(" 메모 : %s\n", ou.memo);
+				printf(" 결제수단 : %s\n", ou.pay);
+			}
+		}
+		fclose(fp1);
+		fclose(fp2);
+
+		// 일별 조회 결과
+		// 230915 카드, 현금 총 사용금액 추가 by jung
+		printf("────────────────────────────────────\n");
+		printf(" %d월 %d일 카드 총 사용 금액 : %d원\n", month, day, card);
+		printf(" %d월 %d일 현금 총 사용 금액 : %d원\n", month, day, cash);
+		printf(" %d월 %d일 총 수익 금액 : %d원\n", month, day, totalincome);
+		printf(" %d월 %d일 총 지출 금액 : %d원\n", month, day, totalout);
+		printf(" %d월 %d일 총 합산 금액 : %d원\n", month, day, totalincome - totalout);
+		system("pause");
+	}
+}
+
+void month_check(int submenu2, char file1[], char file2[]) {
+	// 월별 조회
+	if (submenu2 == 2) {
+		int count = 1;
+		int cnt = 1;
+		int totalincome = 0;
+		int totalout = 0;
+		// 230915 카드변수 추가 by jung
+		int card = 0;
+		// 230915 현금변수 추가 by jung
+		int cash = 0;
+		income in = { 0 };
+		out ou = { 0 };
+
+		FILE* fp1 = fopen(file1, "rb");
+		FILE* fp2 = fopen(file2, "rb");
+		int month = 0;
+		printf(" ▶ 몇 월 내역을 출력하시겠습니까? : ");
+		scanf("%d", &month);
+		// 230916 입력버퍼 비우기(무한루프 방지) by Jung
+		rewind(stdin);
+		// 딜레이 주기 23.09.16 by Lee
+		printf(" 내역 불러오는중");
+		Sleep(400); printf(".");
+		Sleep(400); printf(".");
+		Sleep(400); printf(".\n");
+		Sleep(400);
+
+		// 230914 month변수는 1~12까지만 받게끔 완료. by jung
+		while (month < 1 || month > 12) {
+			printf(" 잘못된 날짜 입력!\n");
+			printf(" 다시 입력해 주세요.\n");
+			printf(" ▶ 몇 월 내역을 출력하시겠습니까? : ");
+			scanf("%d", &month);
+			rewind(stdin);
+		}
+		while (fread(&in, sizeof(income), 1, fp1) > 0) {
+			if (month == in.month) {
+				totalincome += in.money;
+				printf("───────────────────────\n");
+				printf(" 수익내역 %d 번째\n", count++);
+				printf(" 날짜 : %d월 %d일\n", in.month, in.day);
+				printf(" 금액 : %d\n", in.money);
+				printf(" 메모 : %s\n", in.memo);
+				
+			}
+		}
+		while (fread(&ou, sizeof(out), 1, fp2) > 0) {
+			if (month == ou.month) {
+				totalout += ou.money;
+				// 230915 지불방식이 카드인 경우 card변수에 ou.money 값 누적 합산 by jung
+				if (strcmp(ou.pay, "카드") == 0) {
+					card += ou.money;
+				}
+				// 230915 지불방식이 현금인 경우 cash변수에 ou.money 값 누적 합산 by jung
+				if (strcmp(ou.pay, "현금") == 0) {
+					cash += ou.money;
+				}
+				printf("───────────────────────\n");
+				printf(" 지출내역 %d 번째\n", cnt++);
+				printf(" 날짜 : %d월 %d일\n", ou.month, ou.day);
+				printf(" 금액 : %d원\n", ou.money);
+				printf(" 타입 : %s\n", ou.type);
+				printf(" 메모 : %s\n", ou.memo);
+				printf(" 결제수단 : %s\n", ou.pay);
+			}
+		}
+		fclose(fp1);
+		fclose(fp2);
+		printf("────────────────────────────────────\n");
+		printf(" %d월 카드 총 사용금액 : %d원\n", month, card);
+		printf(" %d월 현금 총 사용금액 : %d원\n", month, cash);
+		printf(" %d월 총 수익 금액: %d원\n", month, totalincome);
+		printf(" %d월 총 지출 금액 : %d원\n", month, totalout);
+		printf(" %d월 총 합산 금액 : %d원\n", month, totalincome - totalout);
+		system("pause");
+	}
+}
+
+void all_check(int submenu2, char file1[], char file2[]) {
+	// 전체 내역 조회
+	if (submenu2 == 3) {
+		int count = 1;
+		int cnt = 1;
+		int totalincome = 0;
+		int totalout = 0;
+		int card = 0;
+		int cash = 0;
+		income in = { 0 };
+		out ou = { 0 };
+		printf(" 내역 불러오는중");
+		Sleep(400); printf(".");
+		Sleep(400); printf(".");
+		Sleep(400); printf(".\n");
+		Sleep(400);
+		FILE* fp1 = fopen(file1, "rb");
+		FILE* fp2 = fopen(file2, "rb");
+		while (fread(&in, sizeof(income), 1, fp1) > 0) {
+			totalincome += in.money;
+			printf("───────────────────────\n");
+			printf(" 수익내역 %d 번째\n", count++);
+			printf(" 날짜 : %d월 %d일\n", in.month, in.day);
+			printf(" 금액 : %d원\n", in.money);
+			printf(" 메모 : %s\n", in.memo);
+		}
+		while (fread(&ou, sizeof(out), 1, fp2) > 0) {
+			totalout += ou.money;
+			if (strcmp(ou.pay, "카드") == 0) {
+				card += ou.money;
+			}
+			if (strcmp(ou.pay, "현금") == 0) {
+				cash += ou.money;
+			}
+			printf("───────────────────────\n");
+			printf(" 지출내역 %d 번째\n", cnt++);
+			printf(" 날짜 : %d월 %d일\n", ou.month, ou.day);
+			printf(" 금액 : %d원\n", ou.money);
+			printf(" 타입 : %s\n", ou.type);
+			printf(" 메모 : %s\n", ou.memo);
+			printf(" 결제수단 : %s\n", ou.pay);
+		}
+		fclose(fp1);
+		fclose(fp2);
+		printf("────────────────────────────────────\n");
+		printf(" 카드 총 사용 금액: %d원\n", card);
+		printf(" 현금 총 사용 금액: %d원\n", cash);
+		printf(" 총 수익 금액: %d원\n", totalincome);
+		printf(" 총 지출 금액: %d원\n", totalout);
+		printf(" 총 합산 금액: %d원\n", totalincome - totalout);
+		system("pause");
+	}
+}
+
+void delete_all(char file1[],char file2[]) {
+	char del;
+	printf("┌─ 경고!─────────────────────┐\n");
+	printf("│                            │\n");
+	printf("│  모든 데이터가 지워집니다. │\n");
+	printf("│                            │\n");
+	printf("└────────────────────────────┘\n");
+	printf(" ▶ 삭제 하시겠습니까 Y/N : ");
+	while (1) {
+		scanf(" %c", &del);
+		rewind(stdin);
+		if (del == 'y' || del == 'Y') {
+			FILE* fp1 = fopen(file1, "wb");
+			FILE* fp2 = fopen(file2, "wb");
+			fclose(fp1);
+			fclose(fp2);
+
+			printf(" 데이터 삭제중");
+			Sleep(400); printf(".");
+			Sleep(400); printf(".");
+			Sleep(400); printf(".\n");
+			Sleep(400);
+			printf(" 삭제완료!\n");
+			system("pause");
+		}
+		else if (del == 'n' || del == 'N') {
+			printf(" 삭제 취소 하셨습니다.\n");
+			system("pause");
+		}
+		else {
+			printf(" 잘못된 입력!\n");
+			printf(" 다시 입력해 주세요 : ");
+			continue;
+		}
+		break;
+	}
+}
 
 
 
 ```
-{% endcode %}
 
-처음의 코드로는 챗봇의 연동성이 부족하여 새로운 방식으로 변경하였습니다. \[미세먼지,초미세먼지,자외선, 일몰] 같은 부가적인 요소는 크롤링이다 보니 없는 부분도 있어 올바르지 않는 검색이 수행이 되는 것을 알 수 있었습니다. 다음의 코드가 적용되어진 크롤링 코드입니다.
 
-{% code lineNumbers="true" fullWidth="false" %}
-```python
-# weather.py
 
-from bs4 import BeautifulSoup
-import urllib
-import ssl
-import random
 
-def get_weather_info(city):
-    # 입력받은 지역에 대한 날씨 정보 검색
-    search_url = f'https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query={urllib.parse.quote(city + "날씨")}'
-    context = ssl._create_unverified_context()
-    webpage = urllib.request.urlopen(search_url, context=context)
-    soup = BeautifulSoup(webpage, 'html.parser')
 
-    # 날씨 정보 추출
-    location = soup.find('h2', 'title')
-    temps = soup.find('div', 'temperature_text')
-    c_temp = soup.find('strong', {'class': ''}).text
-    summary = soup.find('p', 'summary')
 
-    # 온도 정보에서 숫자와 소수점만 추출하여 temperature 변수에 저장
-    temperature_str = ''.join(filter(lambda x: x.isdigit() or x == '.' or x == '-', c_temp))
 
-    # 추출한 온도 문자열을 실수형으로 변환
-    try:
-        temperatures = float(temperature_str)
-    except ValueError:
-        temperatures = None
 
-    # 날씨 정보 변수 초기화
-    weather = ''
 
-    # 계절 설정
-    if temperatures is not None:
-        if 7 < temperatures < 20:
-            # 랜덤으로 '가을' 또는 '봄' 선택
-            weather = random.choice(['가벼운', '따스한'])
-        elif temperatures <= 7:
-            weather = '따뜻한'
-        elif temperatures >= 20:
-            weather = '시원한'
-
-    return {
-        'location': location.text.strip() if location else "지역 정보를 찾을 수 없습니다.",
-        'city': city,
-        'temperature': temps.text.strip() if temps else '온도 정보를 찾을 수 없습니다.',
-        'weather_status': summary.text.strip() if summary else '날씨 상태 정보를 찾을 수 없습니다.',
-        'season': weather,
-    }
-
-```
-{% endcode %}
-
-본래 위치정보를 받아와서 날씨정보를 읽어들이는 기술을 구현하고자 하였으나 기술적 한계와 카카오 챗봇에서 사용자 GPS를 받아오려면 사업자의 등록이 필요함에 있어 사업자가 없으므로 키워드 검색으로 선회하여 구현하였습니다.
 
 ***
 
 챗봇 앱의 내부 유틸을 구현한 코드입니다.
 
-{% code lineNumbers="true" fullWidth="false" %}
-```python
 
-# utils.py
-
-from modules.news_scraper import get_fashion_codi_news
-
-def create_weather_response(weather_info):
-    return {
-        'version': "2.0",
-        'template': {
-            'outputs': [
-                {
-                    'basicCard': {
-                        'title': f"({weather_info['city']}) {weather_info['location']} 정보",
-                        'description': f"온도: {weather_info['temperature']}\n날씨 상태: {weather_info['weather_status']}",
-                        'thumbnail': {
-                            'imageUrl': 'https://img.freepik.com/premium-vector/set-of-weather-doodles-illustration_6997-2189.jpg',
-                        },
-                        'buttons':[
-                            {'action': "message",
-                            'label': '남자 추천 코디 보기',
-                            "messageText": f"남자 {weather_info['season']} 코디"
-                            },
-                            {'action': "message",
-                             'label': '여자 추천 코디 보기',
-                             "messageText": f"여자 {weather_info['season']} 코디"
-                             }
-                        ]
-                    }
-                }
-            ]
-        }
-    }
-
-def create_codi_response(recommended_codi, image_url, item_link):
-    return {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "basicCard": {
-                        'title': f"{recommended_codi} 코디 추천",
-                        "description": f"오늘 같은 날엔 이런 코디 어때요?\n",
-                        "thumbnail": {
-                            "imageUrl": image_url
-                        },
-                        'buttons': [
-                            {
-                                "action": "webLink",
-                                "label": "구매링크",
-                                "webLinkUrl": item_link
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    }
-
-def create_HowToUse_response(image_url):
-    return {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "basicCard": {
-                        'title': f"패션 예보 사용법",
-                        "description": f"날씨에 따른 패션을 추천해드립니다. \n채팅방 메뉴에 '날씨&코디'를 눌러서 \n사용 할 수 있습니다. \n자세한 사용법은 사용법을 확인해주세요!",
-                        "thumbnail": {
-                            "imageUrl": 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=1600'
-                        }
-                    }
-                }
-            ]
-        }
-    }
-
-def create_UserInput_response(image_url):
-    return {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "basicCard": {
-                        'title': f"현재 계신 곳을 말씀해주세요!",
-                        "description": f"예시) 서울 날씨 \n이런 식으로 말씀해주시면 좋아요!",
-                        "thumbnail": {
-                            "imageUrl": 'https://img.freepik.com/premium-vector/breaking-news-reporter-background-vector-illustration-with-broadcaster-or-journalist-on-the-monitor-about-information-incident-activities-weather-and-announcements_2175-872.jpg'
-                        }
-                    }
-                },
-                {
-                    "basicCard": {
-                        'title': "기상 캐스터를 보낼 준비 중 입니다!",
-                        "description": "현장에 있는 기자와 연결하기 위해 \n말씀 후, 5초만 기다려주세요!\n",
-                        "thumbnail": {
-                            "imageUrl": 'https://img.freepik.com/premium-vector/breaking-news-reporter-background-vector-illustration-with-broadcaster-or-journalist-on-the-monitor-about-information-incident-activities-weather-and-announcements_2175-873.jpg'
-                        }
-                    }
-                }
-            ]
-        }
-    }
-
-def create_fallback_response():
-    return {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "basicCard": {
-                        'title': f"너무 죄송해요...",
-                        "description": f"제가 아직 모자른가봐요 ㅠㅠ \n원하시는 것을 좀 더 정확하게 \n말씀해주시면 더 좋을 것 같아요!",
-                        "thumbnail": {
-                            "imageUrl": 'https://media.istockphoto.com/id/1431297006/ko/%EB%B2%A1%ED%84%B0/%EC%96%91%EB%B3%B5%EC%9D%84-%EC%9E%85%EA%B3%A0-%EC%A0%88%ED%95%98%EA%B3%A0-%EC%82%AC%EA%B3%BC%ED%95%98%EB%8A%94-%EC%97%AC%EC%84%B1%EC%9D%98-%EA%B7%B8%EB%A6%BC.jpg?s=612x612&w=0&k=20&c=KhYUITknvHgv-hGGL7vEknC8_ylM-uKeeNBk5bnmU50='
-                        }
-                    }
-                }
-            ]
-        }
-    }
-
-def create_not_signal_response():
-    return {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "basicCard": {
-                        'title': f"캐스터를 파견 할 수 없습니다.",
-                        "description": f"파견 가능한 지역을 말씀해주세요!",
-                        "thumbnail": {
-                            "imageUrl": 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2021/04/urbanbrush-20210413210546217768.jpg'
-                        }
-                    }
-                }
-            ]
-        }
-    }
-
-def create_news_response(news_data):
-    if news_data:
-        cards = []
-        for article in news_data:
-            cards.append({
-                "title": article['title'],
-                "description": article['description'],
-                "thumbnail": {
-                    "imageUrl": article['image_url']
-                },
-                "buttons": [
-                    {
-                        "action": "webLink",
-                        "label": "기사 읽기",
-                        "webLinkUrl": article['link']
-                    }
-                ]
-            })
-
-        return {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {
-                        "carousel": {
-                            "type": "basicCard",
-                            "items": cards
-                        }
-                    }
-                ]
-            }
-        }
-    else:
-        return {
-            "version": "2.0",
-            "template": {
-                "outputs": [
-                    {
-                        "simpleText": {
-                            "text": "코디 관련 기사를 찾을 수 없습니다."
-                        }
-                    }
-                ]
-            }
-        }
-
-def create_HowToCodi_response(image_url):
-    return {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "basicCard": {
-                        'title': f"코디 잘 하는 법",
-                        "description": f"코디가 고민이시다구요? \n영상을 확인해 코디법을 한번 살펴보세요!",
-                        "thumbnail": {
-                            "imageUrl": 'https://post-phinf.pstatic.net/MjAyMDExMTBfMTg5/MDAxNjA0OTk1MjI0OTY3.zYTx-ndo3Cyp7PmTHLRTKwDCDwfR3koTN1XQ8P5raigg.vrjQqvqMJjZ7wx1_NkVtiLZGKXvc8QxHikEnUlMqdPcg.PNG/%EB%8C%80%EC%A7%80_1.png?type=w800_q75'
-                        },
-                        'buttons':[
-                            {'action': "webLink",
-                            'label': '남자 코디 하는 법',
-                            "webLinkUrl": "https://www.youtube.com/watch?v=r9_rbkETWoM"
-                            },
-                            {'action': "webLink",
-                             'label': '여자 코디 하는 법',
-                             "webLinkUrl": "https://www.youtube.com/watch?v=Roj7Wi_flv4"
-                             }
-                        ]
-                    }
-                }
-            ]
-        }
-    }
-
-def create_answer_response(image_url):
-    return {
-        "version": "2.0",
-        "template": {
-            "outputs": [
-                {
-                    "basicCard": {
-                        'title': f"패션 캐스터를 보낼 준비 중 입니다!",
-                        "description": f"현장에 있는 기자와 연결하기 위해 \n말씀 후, 5초만 기다려주세요!\n",
-                        "thumbnail": {
-                            "imageUrl": 'https://i.pinimg.com/736x/0f/60/92/0f609243f81410b663069d1633f93564.jpg'
-                        },
-                        'buttons':[
-                            {'action': "message",
-                            'label': '캐스터와 연결 하시겠습니까?',
-                            "messageText": "연결해줘"
-                            },
-                        ]
-                    }
-                }
-            ]
-        }
-    }
-
-
-
-
-```
-{% endcode %}
-
-***
-
-사용자에게 표시될 응답값이 나올 코드입니다.
-
-{% code lineNumbers="true" fullWidth="false" %}
-```python
-# app.py
-
-from flask import Flask, request, jsonify
-import urllib.parse
-from modules.weather import get_weather_info
-from modules.utils import create_not_signal_response, create_weather_response, create_codi_response, create_HowToUse_response, create_UserInput_response, create_fallback_response, create_news_response, create_HowToCodi_response, create_answer_response
-from modules.codi import get_codi_by_season
-from modules.news_scraper import get_fashion_codi_news
-
-application = Flask(__name__)
-
-@application.route("/hellokakao", methods=["POST"])
-def hello_kakao():
-    req = request.get_json()
-    my_req = req["userRequest"]["utterance"]
-    print(req)
-
-    response = None
-
-    if "날씨" in my_req:
-        city = my_req.split("날씨")[0].strip()
-        if city:
-            weather_info = get_weather_info(city)
-            if weather_info['location'] == "VIEW":
-                response = create_not_signal_response()
-            else:
-                response = create_weather_response(weather_info)
-        else:
-            response = create_not_signal_response()
-    elif "코디" in my_req and ("남자" in my_req or "여자" in my_req):
-        # Extract season keyword from the user's utterance
-        gender_keywords = ["남자","여자"]
-        season_keywords = ["따뜻한", "가벼운", "시원한", "따스한"]
-        gender = next((g.strip() for g in gender_keywords if g in my_req), None)
-        season = next((s.strip() for s in season_keywords if s in my_req), None)
-
-        if gender and season:
-            recommended_codi, image_url, item_link = get_codi_by_season(gender, season)
-            response = create_codi_response(recommended_codi, image_url, item_link)
-        else:
-            response = response = create_fallback_response()
-    elif "패션 예보 사용법" in my_req:
-        response = create_HowToUse_response(my_req)
-    elif "일기예보 알려줘" in my_req:
-        response = create_UserInput_response(my_req)
-    elif "패션 뉴스" in my_req:
-        response = create_answer_response(my_req)
-    elif "연결해줘" in my_req:
-        news_data = get_fashion_codi_news()
-        response = create_news_response(news_data)
-    elif "코디 잘 하는 법" in my_req:
-        response = create_HowToCodi_response(my_req)
-    else:
-        # 폴백 응답 사용
-        response = create_fallback_response()
-    return jsonify(response)
-
-if __name__ == "__main__":
-    application.run(host='0.0.0.0', port=5000)
-
-```
-{% endcode %}
 
 </details>
 
