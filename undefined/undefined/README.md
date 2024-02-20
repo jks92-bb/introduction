@@ -10,7 +10,7 @@ description: 학습 정보
 
 <summary><a href="c/">C</a></summary>
 
-[가계부 시스템](c/household.md)
+[가계부 시스템](broken-reference)
 
 </details>
 

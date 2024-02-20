@@ -14,7 +14,9 @@ description: C언어 학습 및 프로젝트
 
 ## 프로젝트
 
-1. [가계부 시스템](household.md)
+{% content-ref url="money.md" %}
+[money.md](money.md)
+{% endcontent-ref %}
 
 
 

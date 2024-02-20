@@ -6,7 +6,7 @@
 
 * [📚 학습 정보](undefined/undefined/README.md)
   * [C](undefined/undefined/c/README.md)
-    * [가계부 시스템](undefined/undefined/c/household.md)
+    * [가계부 시스템](undefined/undefined/c/money.md)
   * [JAVA](undefined/undefined/java/README.md)
     * [Page 2](undefined/undefined/java/page-2.md)
   * [C#](undefined/undefined/c-1/README.md)
