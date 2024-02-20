@@ -113,7 +113,29 @@ if my_req:  # 만약 발화값이 비어있지 않다면
 
 <figure><img src="../../../.gitbook/assets/image (3).png" alt="" width="336"><figcaption><p>수정된 응답 이미지</p></figcaption></figure>
 
+***
 
+그 전날의 경험치 변동도 확인하고자 코드를 추가하여서 테스트를 해보았습니다.
+
+```python
+ #추가코드
+ day_before_yesterday = today - timedelta(days=2)
+ 
+ def hello_maple()
+ #추가코드
+   f"경험치: {result['경험치']}% (어제 경험치 {result['경험치_변동']})\n" 
+  
+ def main(characterName)
+ #추가코드
+ # 어제와 엊그제 경험치 비교
+        day_before_yesterday_exp = float(get_character_basic(ocid, day_before_yesterday.strftime("%Y-%m-%d")).get('character_exp_rate', '0'))
+        yesterday_exp = float(get_character_basic(ocid, yesterday_date).get('character_exp_rate', '0'))
+        result['경험치_변동'] = compare_exp(yesterday_exp, day_before_yesterday_exp) 
+```
+
+<figure><img src="../../../.gitbook/assets/123.gif" alt=""><figcaption><p>경험치 변동사항 확인 가능</p></figcaption></figure>
+
+잘 구동되고 _있는 것_ 같지만 그 전날 _레벨 업을_ 한 경우에서는 -% 경험치 변동이 뜨므로 그런 오류를 개선하기 위해서는 모든 레벨마다의 경험치 총량을 기입하여야 하고 비율이 아닌 총량으로 비교를 하는 방향으로 개선하여야 했습니다. 다음 개선에서 시도를 해보아야겠습니다.
 
 <details>
 
