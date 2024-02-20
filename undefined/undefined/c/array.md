@@ -113,9 +113,10 @@ int main()
 
 \[\* : 지뢰가 없는 땅, B: 지뢰]
 
-위의 결과를 보여줄 수구있는성하기
+위의 결과와 동일한 결과를 보여줄 수 있는 형식의 코드 구성하기
 
 ```c
+//방식1
 #define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
 
@@ -125,10 +126,12 @@ int main()
     char dmz[] = { 'B', 'B', '*', '*', '*' };
     int arr[5] = { 0 };
 
+    //첫 번째 위치에 지뢰가 없으면 "안전지대" 출력	
     if (dmz[0] == '*') {
         printf("안전지대\n");
     }
 
+    // 지뢰를 만나면 현재 위치와 좌우에 있는 배열 요소에 각각 1을 더함
     for (int i = 0; i < 5; i++) {
         if (dmz[i] == 'B') {
             arr[i]++; // 현재 위치가 지뢰인 경우
@@ -147,6 +150,38 @@ int main()
 
     return 0;
 }
+
+//방식2
+int main()
+{	
+	char dmz[] = { 'B', '*', '*', 'B', '*' };
+	int arr[5] = { 0 };
+	int i = 0;
+
+ 	// 첫 번째 위치에 지뢰가 없으면 "안전지대" 출력
+	if (dmz[0] == '*') {
+		printf("안전지대\n");
+	}
+
+	 // 두 번째 위치에 지뢰가 있으면 "지뢰" 출력
+	if (dmz[1] == 'B') {
+		printf("지뢰\n");
+	}
+
+	const int start = 0; // 상수변수 (변수의 값을 변경x)
+	#define end 4 // 상수변수
+
+	for (int i = 0; i < 5; i++) {
+		if (dmz[i] == 'B') arr[i] += 1;  // 현재 위치가 지뢰인 경우
+		if (dmz[i - 1] == 'B' && i != start) arr[i]++; // 좌측에 지뢰가 있는 경우
+		if (dmz[i + 1] == 'B' && i != end) arr[i]++; // 우측에 지뢰가 있는 경우
+	}
+	for (int i = 0; i < 5; i++) {
+		printf("%d\t", arr[i]);
+	}
+}
+
+
 
 ```
 
