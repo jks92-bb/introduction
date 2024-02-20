@@ -6,9 +6,9 @@ description: 간단한 MBTI 폼을 만들었습니다.
 
 간단한 MBTI 폼입니다.
 
-jquery를 이용하여 입력한   값을 이용해부 json파일을  불러와 html에  표현습니다.
+jquery를 이용하여 입력한 값을 json파일의 데이터와 일치하는 결과값을 가져와 웹페이지에 출력하는 형식을 구현하였습니다. 
 
-````html
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +87,8 @@ jquery를 이용하여 입력한   값을 이용해부 json파일을  불러와 
 </body>
 </html>
 ```
-````
+
+
 
 <details>
 
