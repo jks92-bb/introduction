@@ -892,6 +892,5 @@ public class PostCommandController extends HttpServlet {
 
 [https://github.com/db-ung/web\_pj](https://github.com/db-ung/web\_pj)
 
-ㅇㄹㄷㄴㅁㅎㄹㅇ
 
 </details>
