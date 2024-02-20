@@ -6,6 +6,10 @@ description: HTML/JSP 학습 및 프로젝트
 
 ## 학습
 
+{% content-ref url="ani.md" %}
+[ani.md](ani.md)
+{% endcontent-ref %}
+
 {% content-ref url="search.md" %}
 [search.md](search.md)
 {% endcontent-ref %}
