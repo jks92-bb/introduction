@@ -6,7 +6,6 @@ description: 간단한 기초 페이지 문서 입니다.
 
 간단한  페이지이므로타스일을 분리하지 않고 head 안에 삽입하였습니다.
 
-````html
 ```html
 <style>
         table{
@@ -46,7 +45,6 @@ description: 간단한 기초 페이지 문서 입니다.
         }
     </style>
 ```
-````
 
 body의 코드와 결과물이다.&#x20;
 

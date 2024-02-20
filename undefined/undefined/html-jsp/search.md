@@ -6,7 +6,6 @@ description: 간단한 검색창을 이용해보았습니다.
 
 네이버검색창과 구글 검색창을 form태그로 구성하여 실행해보았습니다.
 
-````html
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +39,6 @@ description: 간단한 검색창을 이용해보았습니다.
 </body>
 </html>
 ```
-````
 
 <figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>간단한 검색창</p></figcaption></figure>
 

@@ -6,7 +6,6 @@ description: 간단한 애니메이션이 적용된 페이지를 만들어보았
 
 ### 글자 색깔이 무지개 색으로 변하는 링크
 
-````html
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +46,6 @@ description: 간단한 애니메이션이 적용된 페이지를 만들어보았
 </body>
 </html>
 ```
-````
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-02-20 at 12.08.51.gif" alt=""><figcaption><p>마우스 올릴 시 색 변환</p></figcaption></figure>
 
@@ -59,7 +57,6 @@ description: 간단한 애니메이션이 적용된 페이지를 만들어보았
 
 #### call.html
 
-````html
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -211,12 +208,11 @@ description: 간단한 애니메이션이 적용된 페이지를 만들어보았
     
 </body>
 </html>
+
 ```
-````
 
 #### callagree.html
 
-````html
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -232,11 +228,9 @@ description: 간단한 애니메이션이 적용된 페이지를 만들어보았
 </body>
 </html>
 ```
-````
 
-callreject.html
+#### callreject.html
 
-````html
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -251,7 +245,6 @@ callreject.html
 </body>
 </html>
 ```
-````
 
 <figure><img src="../../../.gitbook/assets/33.gif" alt=""><figcaption><p>간단한 애니메이션</p></figcaption></figure>
 
