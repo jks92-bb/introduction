@@ -6,17 +6,12 @@ description: HTML/JSP 학습 및 프로젝트
 
 ## 학습
 
-{% content-ref url="ani.md" %}
-[ani.md](ani.md)
-{% endcontent-ref %}
+#### &#x20;간단한 애니메이션 스타일
 
-{% content-ref url="search.md" %}
-[search.md](search.md)
-{% endcontent-ref %}
-
-{% content-ref url="html.md" %}
-[html.md](html.md)
-{% endcontent-ref %}
+1. [간단한 애니메이션 스타일](ani.md)
+2.
+3. [HTML 활용한 간단한 페이지](html.md)
+4. 검색창 만들어보기
 
 ***
 
