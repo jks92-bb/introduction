@@ -67,6 +67,8 @@ public class Operation {
         }
     }
 ```
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>콘솔 결과값</p></figcaption></figure>
 ***
 
 ### ex2]
@@ -200,4 +202,4 @@ public class MyFriend1 {
 
 
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>콘솔 결과값</p></figcaption></figure>
+
