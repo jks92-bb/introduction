@@ -40,7 +40,7 @@ description: 간단한 검색창을 이용해보았습니다.
 </html>
 ```
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>간단한 검색창</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>간단한 검색창</p></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/12.gif" alt=""><figcaption><p>네이버 검색창에서 검색한 것과 같이 검색이 가능</p></figcaption></figure>
 
