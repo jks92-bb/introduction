@@ -6,6 +6,7 @@
 
 * [📚 학습 정보](undefined/undefined/README.md)
   * [C](undefined/undefined/c/README.md)
+    * [반복문](undefined/undefined/c/loop.md)
     * [배열](undefined/undefined/c/array.md)
     * [가계부 시스템](undefined/undefined/c/money.md)
   * [JAVA](undefined/undefined/java/README.md)
