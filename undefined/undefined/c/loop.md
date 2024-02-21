@@ -37,7 +37,7 @@ for (int is = 1; is < 10; is++)
 	printf("%dx%d=%d\n", num, is, num * is);
 }
 ```
-<hr>
+
 ## while문
 <hr>
 ```c
