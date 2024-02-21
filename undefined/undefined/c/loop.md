@@ -8,7 +8,7 @@ description: 반복문 학습 내용입니다.
 보통 for과 while이 주로 사용된다.
 
 ## for문
-
+<hr>
 ```c
 for (초기식; 조건식; 증감식) {
     // 반복 실행될 코드
@@ -37,9 +37,9 @@ for (int is = 1; is < 10; is++)
 	printf("%dx%d=%d\n", num, is, num * is);
 }
 ```
-
+<hr>
 ## while문
-
+<hr>
 ```c
 while (조건식) {
     // 반복 실행될 코드
