@@ -11,7 +11,7 @@
     * [배열](undefined/undefined/c/array.md)
     * [가계부 시스템](undefined/undefined/c/money.md)
   * [JAVA](undefined/undefined/java/README.md)
-    * [Page 2](undefined/undefined/java/page-2.md)
+    * [간단한 입출금 기능의 은행 계좌 클래스 만들기](undefined/undefined/java/page-2.md)
   * [C#](undefined/undefined/c-1/README.md)
     * [대구 맛집 정보 시스템](undefined/undefined/c-1/undefined.md)
   * [Python](undefined/undefined/ptyhon/README.md)
