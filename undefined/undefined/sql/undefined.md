@@ -76,3 +76,15 @@ Oracle <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&
 외래키는 기본 키를 참조하는 테이블의 필드입니다. 테이블 간의 관계를 설정하는데 사용됩니다.
 
 </details>
+
+<summary>📖SQL 명령어 종류</summary>
+
+### DQL : 데이터 조회
+- 
+### DDL : 데이터 구조 정의
+- CREATE(생성), ALTER(수정), DROP, TRUNCATE(삭제)
+### DML : 데이터 조작
+- INSERT(삽입), UPDATE(수정), DELETE(삭제), SELECT(검색)
+
+</details>
+
