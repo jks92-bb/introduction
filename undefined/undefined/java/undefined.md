@@ -1,156 +1,199 @@
 ---
-description: 간단한 사용자 정보를 만들었습니다.
+description: 패키지 및 오버라이드에 대한 학습내용입니다.
 ---
 
-# 간단한 사용자 정보 만들기
+# 패키지 및 오버라이드
 
 <details>
 
-<summary>⚙️구조</summary>
+<summary>📖패키지(package)</summary>
 
-1. **Customer 클래스:**
-   * `Customer` 클래스는 고객의 계좌 정보를 나타냅니다.
-   * `acc_num`, `id`, `password` 등의 멤버 변수를 가지고 있습니다.
-   * `Print` 메서드는 고객 정보를 출력합니다.
-   * `ChangePw` 메서드는 비밀번호를 변경하며, 글자 크기가 5자리 이하일 경우 계속해서 입력을 받습니다.
-   * 생성자를 통해 객체를 초기화합니다.
-2. **Account 클래스 (main 클래스):**
-   * `Account` 클래스는 프로그램의 진입점을 나타냅니다.
-   * `main` 메서드에서는 `Scanner`를 사용하여 사용자 및 매니저의 정보를 입력받고, 중복된 아이디를 체크하여 매니저 배열에 저장합니다.
-   * 사용자 정보도 입력받고, 비밀번호 변경을 위한 메서드 호출 등을 수행합니다.
-   * 최종적으로 매니저와 사용자의 정보를 출력합니다.
+관련된 클래스들을 그룹화하는 데 사용되는 디렉토리 구조를 나타내는 것이다. 장점
+
+* 네임스페이스 분리 : 패키지를 사용하면 클래스들을 그룹화하여 동일한 이름의 클래스 충돌을 방지할 수 있습니다.
+* 유지보수성 향상 : 프로젝트가 커지면서 클래싀 수가 증가하면 패키지를 사용하여 클래스를 논리적으로 구조화하여 유지보수를 용이하게 만들 수 있습니다.
+* 접근 제어 : 패키지를 사용하면 클래스와 멤버들에 대한 접근을 제어할 수 있습니다.
 
 </details>
 
+<details>
+
+<summary>📖오버라이드(override)</summary>
+
+하위 클래스가 상위 클래스의 메서드를 재정의하는 개념이다. 이를 행하는 것을 오버라이딩(overriding)이라고 한다.
+
+* 상속관계 : 하위 클래스가 상위 클랫의 메서드를 상속받아 재정의
+* 메서드 시그니처 동일성 : 오버라이딩할 메서드는 상위 클래스의 메서드와 이름,매개변수 타입 및 개수, 반환 타입 을 가져야 합니다.
+* 접근 제어자 변경 : 하위 클래스에서 오버라이딩된 메서드의 접근 제어자는 상위 클래스의 메서드보다 더 넓은 범위로 변경할 수 있습니다. ex) 상위 클래스의 메서드가 protected이면 하위 클래스에서는 public으로 변경할 수 있습니다.
+* super키워드 : 하위 클래스에서 오버라이딩된 메서드 내에서 상위 클래스의 메서드를 호출할 때 'super' 키워드를 사용해서 호출합니다.
+
+</details>
+
+### ex1]
+
 ```java
-import java.util.Scanner;
+package com.kb;
 
-class Customer {
-    Scanner scanner = new Scanner(System.in);
-    private int acc_num;
-    private String id;
-    private String password;
+public class BusinessMan extends Man {
+    private String company; // 프라이빗으로 지정하여 main에서 고칠 수 없게 만들어 놓음.
+    private String position;
 
-    // 회원 번호 getter 및 setter
-    public int getAcc_num() {
-        return acc_num;
+    public BusinessMan(String company, String position, String name) {
+        super(name);
+        this.company = company;
+        this.position = position;
     }
 
-    public void setAcc_num(int acc_num) {
-        this.acc_num = acc_num;
+    @Override // 컴파일러에서 자동으로 사용되어지긴 가독성을 위해서 쓰는것이 낫다. 상위 클래스 정의를 재정의한 코드라고 알려주는 것.
+    public void tellYourinfo() {
+        System.out.println("My company is " + this.company);
+        System.out.println("My position is " + this.position);
+        super.tellYourinfo();
     }
+}
+```
 
-    // 아이디 getter 및 setter
-    public String getId() {
-        return id;
-    }
+위의 클래스는 패키지화 하였으며 아래의 클래스로 패키지안에 있는 클래스를 import하여 실행하였습니다.
 
-    public void setId(String id) {
-        this.id = id;
-    }
+```java
+import com.kb.BusinessMan;
 
-    // 비밀번호 getter 및 setter
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    // 회원 정보 출력 메서드
-    public void Print() {
-
-        System.out.println("회원 번호 : " + this.acc_num);
-        System.out.println("아 이 디 : " + this.id);
-        System.out.println("비밀 번호 : " + this.password);
-    }
-
-    // 비밀번호 변경 메서드
-    public void ChangePw(String p) {
-        this.password = p;
-        while (true) {
-            if (password.length() <= 5) {
-                System.out.println("글자 크기가 5자리 이하입니다. 늘려주십시오.");
-                password = scanner.next();
-            } else if (password.length() > 5) {
-                break;
-            }
+public class Operation {
+    public static void main(String[] args) {
+        BusinessMan businessMan = new BusinessMan("경북","학생", "민욱");
+        
+            businessMan.tellYourinfo();
         }
-        System.out.println("비밀 번호 변경완료");
+    }
+```
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>콘솔 결과값</p></figcaption></figure>
+
+***
+
+### ex2]
+
+최상위 클래스인 Friend와 상속받은 두 클래스 CompFriend, UnivFreind가 있으며 MyFriend1클래스를 활용해 출력하는 코드입니다.
+
+```java
+
+package com.kb;
+
+//Friend 클래스 선언
+public class Friend {
+    // 멤버변수
+
+    // String 이름
+    private  String name;
+    // String 전화번호
+    private  String phone;
+
+    //생성자 params : 이름, 전화번호.
+
+    public Friend(String name, String phone) {
+        this.name = name;
+        this.phone = phone;
     }
 
-    // 생성자
-    public Customer(int acc, String u, String p) {
-        this.acc_num = acc;
-        this.id = u;
-        this.password = p;
-    }
-
-    public Customer() {
-        this.acc_num = 0000;
-        this.id = "user";
-        this.password = "0000";
+    // 메소드명 : showInfo()
+    public void showInfo(){
+        System.out.println("이름 : "+this.name);
+        System.out.println("전화 : "+this.phone);
     }
 
 }
 
+```
 
-public class Account {
+```java
+package com.kb;
+
+//클래스 생성
+public class CompFriend extends Friend {
+    // 멤버변수
+    // string형 부서
+    private String department;
+
+    // 생성자 - params : 이름 , 부서 , 전화번호.
+    public CompFriend(String name, String department, String phone) {// 변수 입력.
+        super(name, phone);
+        this.department = department;
+    }
+
+    // 메소드명 : showinfo()
+    // 기능 : 이름, 부서 , 전화번호
+    // 정보 출력 메서드 (오버라이딩)
+    @Override
+    public void showInfo() { //정보 표현
+        super.showInfo();
+        System.out.println("부서 : " + this.department);
+    }
+}
+
+```
+
+```java
+package com.kb;
+
+//클래스 생성
+public class UnivFriend extends Friend {
+    // 멤버변수
+    // String형 전공.
+    private String major;
+
+    //생성자 - params : 이름, 전공, 전화번호.
+    public UnivFriend(String name, String major, String phone) {//생성자 변수 기입.
+        super(name, phone);
+        this.major = major;
+    }
+    // 정보 표출 라인.
+    // 메소드명 : showinfo()
+    // 기능 : 이름, 전공, 전화번호 출력
+     @Override
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("전공 :" + this.major);
+    }
+}
+```
+
+```java
+// com.kb 패키지에서 Friend, UnivFriend, CompFriend 클래스를 import
+import com.kb.CompFriend;
+import com.kb.Friend;
+import com.kb.UnivFriend;
+
+// Java 내장 패키지인 java.util에서 ArrayList, List 클래스를 import
+import java.util.ArrayList;
+import java.util.List;
+
+// MyFriend1 클래스 선언
+public class MyFriend1 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+       
+        // Friend 타입을 담을 수 있는 List 객체 friendList 생성
+        List<Friend> friendList = new ArrayList<>();
 
-        // 배열선언 manager 객체 생성
-        Customer manager[] = new Customer[3];
+        // ufrns[ucnt]에 UnivFriend 객체 생성(lee, computer, 01011112222) 후 저장
+        // friendList에 UnivFriend 객체들과 CompFriend 객체들을 추가
+        friendList.add(new UnivFriend("lee", "computer", "01011112222"));
+        friendList.add(new UnivFriend("seo", "electronics", "01011113333"));
+        friendList.add(new CompFriend("yoon", "r&d 1", "01011114444"));      
+        friendList.add(new CompFriend("youha", "r&d 2", "01011115455"));
+        friendList.add(new CompFriend("soha", "r&d 3", "01011115557"));
+        friendList.add(new CompFriend("jungha", "r&d 4", "01011115585"));
 
-        // manager 초기화.
-        for (int i = 0; i < 3; i++) {
-            manager[i] = new Customer();
+
+        // 반복 i 0부터 ucnt - 1 까지
+        // - ufrns[i]의 showInfo() 실행
+        // 반복문을 통해 friendList에 있는 객체들의 showInfo() 메서드 호출
+        for (int i = 0; i < friendList.size(); i++) {
+            friendList.get(i).showInfo();
         }
-
-
-        for (int i = 0; i < 3; i++) {
-
-            System.out.println("회원 정보를 입력하세요 (번호 아이디 비밀번호):");
-            System.out.println(i + 1 + "번째");
-            int a = scanner.nextInt();
-            String u = scanner.next();
-            String p = scanner.next();
-
-            // 아이디 중복 체크
-            boolean isDuplicate = false;
-            for (int j = 0; j < i; j++) {
-                if (manager[j].getId().equals(u)) {
-                    System.out.println("이미 존재하는 아이디입니다. 다른 아이디를 입력해주세요.");
-                    isDuplicate = true;
-                    break;
-                }
-            }
-            if (isDuplicate) {
-                i--;
-            } else {
-                manager[i] = new Customer(a, u, p);
-            }
+         // 강화된 for문을 통해 friendList에 있는 객체들의 showInfo() 메서드 호출
+        for(Friend friend : friendList){
+            friend.showInfo();
         }
-
-        // user 정보 입력
-        System.out.println("사용자 정보를 입력하세요 (번호 아이디 비밀번호):");
-        Customer user = new Customer(scanner.nextInt(), scanner.next(), scanner.next());
-
-        // user 비밀번호 변경
-        System.out.println("비밀 번호 변경하시오");
-        user.ChangePw(scanner.next());
-
-        // 매니저 정보 출력 & 유저 정보 출력
-        System.out.println("--------매니저 정보---------");
-        for (int i = 0; i < 3; i++) {
-            System.out.println(i + 1 + "번째");
-            manager[i].Print();
-            System.out.println();
-        }
-        System.out.println("------user정보--------");
-        user.Print();
-        System.out.println();
     }
 }
 
