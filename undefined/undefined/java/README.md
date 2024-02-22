@@ -6,6 +6,10 @@ description: JAVA 학습 및 프로젝트
 
 ## 학습
 
+{% content-ref url="class.md" %}
+[class.md](class.md)
+{% endcontent-ref %}
+
 {% content-ref url="extends.md" %}
 [extends.md](extends.md)
 {% endcontent-ref %}
