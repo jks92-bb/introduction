@@ -28,6 +28,8 @@
     * [HTML 활용한 간단한 페이지](undefined/undefined/html-jsp/html.md)
     * [검색창 만들어보기](undefined/undefined/html-jsp/search.md)
     * [게임커뮤니티사이트](undefined/undefined/html-jsp/gameco.md)
+  * [SQL](undefined/undefined/sql/README.md)
+    * [기본 개념](undefined/undefined/sql/undefined.md)
 
 ## Me
 

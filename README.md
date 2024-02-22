@@ -17,8 +17,11 @@ coverY: 0
 
 <summary>공유하는 정보</summary>
 
-* C언어
-* JAVA언어
-* Ptyhon
+* [C](undefined/undefined/c/)
+* [JAVA](undefined/undefined/java/)
+* [C#](undefined/undefined/c-1/)
+* [Python](undefined/undefined/ptyhon/)
+* [HTML/JSP](undefined/undefined/html-jsp/)
+* [SQL](undefined/undefined/sql/)
 
 </details>
