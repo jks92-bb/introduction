@@ -93,6 +93,14 @@ MS-SQL <img src="https://img.shields.io/badge/microsoftsqlserver-CC2927?style=fo
 
 * INSERT(삽입), UPDATE(수정), DELETE(삭제), SELECT(검색)
 
+### DCL : 데이터 제어
+
+* GRANT(권한부여), REVOKE(권한해제)
+
+### TCL : 트랜잭션 언어
+
+* COMMIT(데이터베이스에 반영),ROLLBACK(작업 이전 상태로 되돌림)
+
 </details>
 
 ###
