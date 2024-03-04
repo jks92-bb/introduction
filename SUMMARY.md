@@ -30,6 +30,7 @@
     * [게임커뮤니티사이트](undefined/undefined/html-jsp/gameco.md)
   * [SQL](undefined/undefined/sql/README.md)
     * [기본 개념](undefined/undefined/sql/undefined.md)
+    * [편의점 재고관리](undefined/undefined/sql/sqlpro.md)
 
 ## Me
 
