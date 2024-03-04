@@ -28,7 +28,8 @@ description: 편의점 재고관리를 연습했습니다.
 
 <summary>⚙️구성</summary>
 
-![image](https://github.com/jks92-bb/introduction/assets/49471248/d3df7a55-3a9c-4a62-806d-90353c6f62b7)
+![image](https://github.com/jks92-bb/introduction/assets/49471248/587b36c8-1632-486d-bcb1-3c63d8d65400)
+
 
 </details>
 
