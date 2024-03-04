@@ -20,7 +20,7 @@ description: 편의점 재고관리를 연습했습니다.
 
 <summary>🛠활용 도구</summary>
 
-<img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&#x26;logo=oracle&logoColor=white"alt="" data-size="original">
+<img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&#x26;logo=oracle&logoColor=white">
 
 </details>
 
