@@ -20,7 +20,7 @@ description: 편의점 재고관리를 연습했습니다.
 
 <summary>🛠활용 도구</summary>
 
-<img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&#x26;logo=oracle&logoColor=white">
+![](https://img.shields.io/badge/oracle-F80000?style=for-the-badge\&logo=oracle\&logoColor=white)
 
 </details>
 
@@ -28,8 +28,7 @@ description: 편의점 재고관리를 연습했습니다.
 
 <summary>⚙️구성</summary>
 
-![image](https://github.com/jks92-bb/introduction/assets/49471248/587b36c8-1632-486d-bcb1-3c63d8d65400)
-
+<img src="https://github.com/jks92-bb/introduction/assets/49471248/587b36c8-1632-486d-bcb1-3c63d8d65400" alt="image" data-size="original">
 
 </details>
 
@@ -38,7 +37,9 @@ description: 편의점 재고관리를 연습했습니다.
 <summary>📃중점 코드</summary>
 
 결과물을 얻기위한 메인 sql문입니다.
-## MAIN
+
+#### MAIN
+
 ```sql
 -- 트리거 사용하기위해 서버 아웃풋을 ON 시킨다
 SET SERVEROUTPUT ON;
@@ -116,8 +117,11 @@ SELECT * FROM INVENTORY;
 COMMIT;
 
 ```
+
 삭제 프로시저를 따로 두었습니다.
-## DELETE_PROCEDURE
+
+#### DELETE\_PROCEDURE
+
 ```sql
 -- 1. 전체 데이터 삭제
 CREATE OR REPLACE PROCEDURE DELETE_ALL
@@ -143,7 +147,9 @@ END DELETE_COMPANY_CODE;
 ```
 
 데이터의 변경시 확인 할 수 있는 알림을 주기위해 트리거를 작성하였습니다.
-## TRIGGER
+
+#### TRIGGER
+
 ```sql
 -- 1. 각각 추가될때 '데이터 추가되었습니다.'
 -- COMPANY 테이블 추가
@@ -198,11 +204,10 @@ END;
 /
 ```
 
-
-
-
 데이터를 원래 대용량 받아와서 작업을 진행하려 했으나 수작업으로 찾아서 기입하였습니다.
-## INVENTORY_DATA
+
+#### INVENTORY\_DATA
+
 ```sql
 -- 관리 테이블 데이터 추가/ 상품이름(NAME), 품목 코드(FOOD_CODE), 재고(CNT), 가격(PRICE), 
 -- 간편식사 데이터 입력
@@ -214,13 +219,12 @@ INSERT INTO INVENTORY(NAME,CATEGORY_CODE,CNT,PRICE) VALUES ('뉴자이언트지�
 INSERT INTO INVENTORY(NAME,CATEGORY_CODE,CNT,PRICE) VALUES ('크로와상' ,'AB01', 10, 1300);
 ```
 
-
 </details>
 
 <details>
 
 <summary>🔎프로젝트 git 주소</summary>
 
-
+[https://github.com/Hyno2/SQL-Project/tree/main](https://github.com/Hyno2/SQL-Project/tree/main)
 
 </details>

@@ -10,7 +10,11 @@ description: 학습 정보
 
 <summary><a href="c/">C</a></summary>
 
-[가계부 시스템](broken-reference)
+1. 함ㅅㅜ
+2. 반복문
+3. 배열
+
+
 
 </details>
 
