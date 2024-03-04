@@ -4,8 +4,6 @@ description: 학습 정보
 
 # 📚 학습 정보
 
-
-
 <details>
 
 <summary><a href="c/">C</a></summary>
@@ -33,8 +31,9 @@ description: 학습 정보
 
 <summary><a href="c-1/">C#</a></summary>
 
-1. [대구 맛집 정보 시스템](c-1/undefined.md)
-2.
+1. 로또API 이용해 번호 확인하기
+2. [대구 맛집 정보 시스템](c-1/undefined.md)
+3.
 
 </details>
 
@@ -45,5 +44,14 @@ description: 학습 정보
 1. [공공데이터 활용하여 날씨 정보 받아오기](ptyhon/forecast1.md)
 2. [NEXON OPEN API 이용하기](ptyhon/nexon-open-api.md)
 3. [기상에 따른 코디 추천 시스템](ptyhon/forecast.md)
+
+</details>
+
+<details>
+
+<summary>SQL</summary>
+
+1. [기본 개념](sql/undefined.md)
+2. [편의점 재고관리](sql/sqlpro.md)
 
 </details>
