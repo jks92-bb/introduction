@@ -31,7 +31,7 @@ description: 학습 정보
 
 <summary><a href="c-1/">C#</a></summary>
 
-1. 로또API 이용해 번호 확인하기
+1. [로또API 이용해 번호 확인하기](c-1/lotto.md)
 2. [대구 맛집 정보 시스템](c-1/undefined.md)
 3.
 
